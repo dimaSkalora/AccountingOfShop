@@ -12,6 +12,8 @@ public class Alcohol extends AbstractBaseEntity{
     private Integer soldForMonth;
     private Integer balanceOnTheLastDayOfTheMonth;
 
+    private User user;
+
     public Alcohol() {
     }
 
@@ -93,6 +95,14 @@ public class Alcohol extends AbstractBaseEntity{
 
     public void setBalanceOnTheLastDayOfTheMonth(Integer balanceOnTheLastDayOfTheMonth) {
         this.balanceOnTheLastDayOfTheMonth = balanceOnTheLastDayOfTheMonth;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
