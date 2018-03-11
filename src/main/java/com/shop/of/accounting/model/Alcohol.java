@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class Alcohol extends AbstractBaseEntity{
     private LocalDate goodsReceiptDate;
     private String category;
+    private String productName;
     private Double liter;
     private Integer balanceOnTheFirstDayOfTheMonth;
     private Integer receivedForMonth;
@@ -14,14 +15,15 @@ public class Alcohol extends AbstractBaseEntity{
     public Alcohol() {
     }
 
-    public Alcohol(LocalDate goodsReceiptDate, String category, Double liter, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
-        this(null,goodsReceiptDate,category,liter,balanceOnTheFirstDayOfTheMonth,receivedForMonth,soldForMonth,balanceOnTheLastDayOfTheMonth);
+    public Alcohol(LocalDate goodsReceiptDate, String category, String productName, Double liter, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
+        this(null,goodsReceiptDate,category,productName,liter,balanceOnTheFirstDayOfTheMonth,receivedForMonth,soldForMonth,balanceOnTheLastDayOfTheMonth);
     }
 
-    public Alcohol(Integer id, LocalDate goodsReceiptDate, String category, Double liter, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
+    public Alcohol(Integer id, LocalDate goodsReceiptDate, String category, String productName, Double liter, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
         super(id);
         this.goodsReceiptDate = goodsReceiptDate;
         this.category = category;
+        this.productName=productName;
         this.liter = liter;
         this.balanceOnTheFirstDayOfTheMonth = balanceOnTheFirstDayOfTheMonth;
         this.receivedForMonth = receivedForMonth;
@@ -43,6 +45,14 @@ public class Alcohol extends AbstractBaseEntity{
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Double getLiter() {
