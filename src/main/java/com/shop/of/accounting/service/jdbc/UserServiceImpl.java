@@ -4,6 +4,8 @@ import com.shop.of.accounting.model.User;
 import com.shop.of.accounting.repository.UserRepository;
 import com.shop.of.accounting.service.UserService;
 import com.shop.of.accounting.util.exception.NotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.List;
@@ -11,9 +13,11 @@ import java.util.List;
 import static com.shop.of.accounting.util.ValidationUtil.checkNotFound;
 import static com.shop.of.accounting.util.ValidationUtil.checkNotFoundWithId;
 
+@Service
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
+    @Autowired
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

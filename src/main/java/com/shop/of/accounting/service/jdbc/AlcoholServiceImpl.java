@@ -5,15 +5,19 @@ import com.shop.of.accounting.repository.AlcoholRepository;
 import com.shop.of.accounting.service.AlcoholService;
 import com.shop.of.accounting.util.ValidationUtil;
 import com.shop.of.accounting.util.exception.NotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class AlcoholServiceImpl implements AlcoholService {
 
     private final AlcoholRepository alcoholRepository;
 
+    @Autowired
     public AlcoholServiceImpl(AlcoholRepository alcoholRepository) {
         this.alcoholRepository = alcoholRepository;
     }
