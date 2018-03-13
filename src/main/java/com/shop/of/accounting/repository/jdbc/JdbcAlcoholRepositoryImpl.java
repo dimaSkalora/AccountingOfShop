@@ -3,6 +3,7 @@ package com.shop.of.accounting.repository.jdbc;
 import com.shop.of.accounting.model.Alcohol;
 import com.shop.of.accounting.repository.AlcoholRepository;
 import com.shop.of.accounting.repository.jdbc.row_mapper.AlcoholRowMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,11 +11,13 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
 public class JdbcAlcoholRepositoryImpl implements AlcoholRepository {
     //Статический метод фабрики для создания нового BeanPropertyRowMapper (с отображенным классом, указанным только один раз).
     private static final RowMapper<Alcohol> ROW_MAPPER = BeanPropertyRowMapper.newInstance(Alcohol.class);
@@ -31,6 +34,7 @@ public class JdbcAlcoholRepositoryImpl implements AlcoholRepository {
      основного оператора insertAlcohol. Фактическая вставка обрабатывается с помощью Spring JdbcTemplate*/
     private final SimpleJdbcInsert insertAlcohol;
 
+    @Autowired
     public JdbcAlcoholRepositoryImpl(DataSource dataSource, JdbcTemplate jdbcTemplate,
                                      NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.insertAlcohol = new SimpleJdbcInsert(dataSource)

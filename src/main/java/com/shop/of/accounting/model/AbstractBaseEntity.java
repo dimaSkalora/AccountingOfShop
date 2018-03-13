@@ -1,9 +1,9 @@
 package com.shop.of.accounting.model;
 
-
 import com.shop.of.accounting.HasId;
 
 public abstract class AbstractBaseEntity implements HasId {
+    public static final int START_SEQ = 100000;
 
     protected Integer id;
 
