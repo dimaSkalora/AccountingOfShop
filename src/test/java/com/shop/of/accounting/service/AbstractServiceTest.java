@@ -26,7 +26,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
         "classpath:spring/spring-db.xml"
 })
 @RunWith(SpringJUnit4ClassRunner.class)
-//@Sql(scripts = "classpath:spring/db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
+@Sql(scripts = "classpath:spring/db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
 public abstract class AbstractServiceTest {
     @ClassRule
     public static ExternalResource summary = TimingRules.SUMMARY;
