@@ -24,9 +24,9 @@ public class AlcoholRowMapper implements RowMapper<Alcohol> {
         alcohol.setLiter(resultSet.getDouble("liter"));
         alcohol.setBalanceOnTheFirstDayOfTheMonth(resultSet.getInt("balanceOnTheFirstDayOfTheMonth"));
         alcohol.setReceivedForMonth(resultSet.getInt("receivedForMonth"));
-        alcohol.setReceivedForMonth(resultSet.getInt("soldForMonth"));
+        alcohol.setSoldForMonth(resultSet.getInt("soldForMonth"));
         alcohol.setBalanceOnTheLastDayOfTheMonth(resultSet.getInt("balanceOnTheLastDayOfTheMonth"));
-        alcohol.setUser((User) resultSet.getObject("user"));
+       // alcohol.setUser((User) resultSet.getObject("user"));
 
         return alcohol;
     }
