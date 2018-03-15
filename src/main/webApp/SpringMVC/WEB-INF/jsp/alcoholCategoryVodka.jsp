@@ -8,7 +8,7 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 <section>
     <h3>Alcohol Category Vodka</h3>
-    <a href="/alcohols/create/vodka">Create Vodla</a>
+    <a href="/alcohols/create/vodka">Create Vodka</a>
     <table border="1" cellspacing="0" cellpadding="8">
         <thead>
         <th>Goods Receipt Date</th>
