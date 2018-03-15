@@ -43,7 +43,7 @@
 
     <form:form action="${addAction}" commandName="user">
         <table>
-            <c:if test="${!empty user.name}">
+    <%--        <c:if test="${!empty user.name}">
                 <tr>
                     <td>
                         <form:label path="id">
@@ -51,11 +51,23 @@
                         </form:label>
                     </td>
                     <td>
-                        <form:input path="id" readonly="true" size="8" disabled="true"/>
-                        <form:hidden path="id"/>
+               &lt;%&ndash;         <form:input path="id" readonly="true" size="8" disabled="true"/>
+                        <form:hidden path="id"/>&ndash;%&gt;
+                        <form:input path="id" />
                     </td>
                 </tr>
-            </c:if>
+            </c:if>--%>
+            <tr>
+                <td>
+                    <form:label path="id">
+                        <spring:message text="ID"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="id" readonly="true" size="8" disabled="true"/>
+                    <form:hidden path="id"/>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <form:label path="name">

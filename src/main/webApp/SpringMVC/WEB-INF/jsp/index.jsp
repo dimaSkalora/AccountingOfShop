@@ -16,6 +16,7 @@
 </form>
     <a href="users">users</a><br>
     <a href="alcohols">alcohol</a><br>
+    <a href="alcohols/category/wine">wine</a><br>
 </section>
 <jsp:include page="fragments/footer.jsp"/>
 </body>

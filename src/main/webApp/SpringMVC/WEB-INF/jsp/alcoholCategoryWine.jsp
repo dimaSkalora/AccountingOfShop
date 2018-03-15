@@ -8,10 +8,8 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <section>
-    <h3>Alcohol title</h3>
-    <a href="/alcohols/create">Create</a><br>
-    <a href="alcohols/category/wine">wine</a><br>
-
+    <h3>Alcohol Category Wine</h3>
+    <a href="/alcohols/create/wine">Create Wine</a>
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
             <tr>
@@ -27,7 +25,7 @@
                 <th></th>
             </tr>
         </thead>
-        <c:forEach items="${alcohols}" var="alcohol">
+        <c:forEach items="${categoryWine}" var="alcohol">
             <jsp:useBean id="alcohol" scope="page" type="com.shop.of.accounting.model.Alcohol"/>
             <tr>
                 <td><c:out value="${alcohol.goodsReceiptDate}"/></td>
@@ -44,6 +42,5 @@
         </c:forEach>
     </table>
 </section>
-
 </body>
 </html>
