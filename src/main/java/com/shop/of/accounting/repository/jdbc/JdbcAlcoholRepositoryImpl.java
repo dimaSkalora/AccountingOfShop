@@ -35,8 +35,7 @@ public class JdbcAlcoholRepositoryImpl implements AlcoholRepository {
     private final SimpleJdbcInsert insertAlcohol;
 
     @Autowired
-    public JdbcAlcoholRepositoryImpl(DataSource dataSource, JdbcTemplate jdbcTemplate,
-                                     NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+    public JdbcAlcoholRepositoryImpl(DataSource dataSource, JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.insertAlcohol = new SimpleJdbcInsert(dataSource)
                 //Укажите имя таблицы, которое будет использоваться для вставки.
                 .withTableName("alcohol")
@@ -59,7 +58,7 @@ public class JdbcAlcoholRepositoryImpl implements AlcoholRepository {
                 .addValue("receivedForMonth",alcohol.getReceivedForMonth())
                 .addValue("soldForMonth",alcohol.getSoldForMonth())
                 .addValue("balanceOnTheLastDayOfTheMonth",alcohol.getBalanceOnTheLastDayOfTheMonth())
-                .addValue("user",alcohol.getUser());
+                .addValue("user_id",alcohol.getUser());
         if(alcohol.isNew()){
             //Выполните вставку, используя значения, переданные и возвращающие сгенерированный ключ.
             Number newId = insertAlcohol.executeAndReturnKey(map);
