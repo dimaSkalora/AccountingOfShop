@@ -6,29 +6,23 @@
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <jsp:include page="fragments/bodyHeader.jsp"/>
-
 <section>
-    <h3>Alcohol title</h3>
-    <a href="alcohols/create">Create</a><br>
-    <a href="alcohols/category/wine">Categogy Wine</a><br>
-    <a href="alcohols/category/vodka">Category Vodka</a><br>
-
-    <table border="1" cellpadding="8" cellspacing="0">
+    <h3>Alcohol Category Vodka</h3>
+    <a href="/alcohols/create/vodka">Create Vodla</a>
+    <table border="1" cellspacing="0" cellpadding="8">
         <thead>
-            <tr>
-                <th>Goods Receipt Date</th>
-                <th>Category</th>
-                <th>Product Name</th>
-                <th>Liter</th>
-                <th>Balance On The First Day Of The Month</th>
-                <th>Received For Month</th>
-                <th>Sold For Month</th>
-                <th>Balance On The Last Day Of The Month</th>
-                <th></th>
-                <th></th>
-            </tr>
+        <th>Goods Receipt Date</th>
+        <th>Category</th>
+        <th>Product Name</th>
+        <th>Liter</th>
+        <th>Balance On The First Day Of The Month</th>
+        <th>Received For Month</th>
+        <th>Sold For Month</th>
+        <th>Balance On The Last Day Of The Month</th>
+        <th></th>
+        <th></th>
         </thead>
-        <c:forEach items="${alcohols}" var="alcohol">
+        <c:forEach items="${categoryVodka}" var="alcohol">
             <jsp:useBean id="alcohol" scope="page" type="com.shop.of.accounting.model.Alcohol"/>
             <tr>
                 <td><c:out value="${alcohol.goodsReceiptDate}"/></td>
@@ -45,6 +39,5 @@
         </c:forEach>
     </table>
 </section>
-
 </body>
 </html>
