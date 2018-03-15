@@ -97,9 +97,10 @@ public class JspAlcoholController extends AbstarctAlcoholController {
         Alcohol alcohol = new Alcohol();
         alcohol.setGoodsReceiptDate(LocalDate.now());
         alcohol.setCategory("водка");
-        model.addAttribute("",alcohol);
-        return "alcoholCategoryVodka";
+        model.addAttribute("alcohol",alcohol);
+        return "alcoholForm";
     }
+
 
 
     private int getId(HttpServletRequest request) {
