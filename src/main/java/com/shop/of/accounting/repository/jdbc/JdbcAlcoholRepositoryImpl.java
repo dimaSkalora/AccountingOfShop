@@ -58,7 +58,7 @@ public class JdbcAlcoholRepositoryImpl implements AlcoholRepository {
                 .addValue("receivedForMonth",alcohol.getReceivedForMonth())
                 .addValue("soldForMonth",alcohol.getSoldForMonth())
                 .addValue("balanceOnTheLastDayOfTheMonth",alcohol.getBalanceOnTheLastDayOfTheMonth())
-                .addValue("user_id",alcohol.getUser());
+                .addValue("user_id",userId);
         if(alcohol.isNew()){
             //Выполните вставку, используя значения, переданные и возвращающие сгенерированный ключ.
             Number newId = insertAlcohol.executeAndReturnKey(map);
