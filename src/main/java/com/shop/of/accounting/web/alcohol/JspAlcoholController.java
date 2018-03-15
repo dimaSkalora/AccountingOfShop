@@ -36,8 +36,6 @@ public class JspAlcoholController extends AbstarctAlcoholController {
     @GetMapping("/create")
     public String create(Model model ){
         model.addAttribute("alcohol", new Alcohol(LocalDate.now(),"","",0.0,0,0,0,0));
-      //  Alcohol alcohol = new Alcohol(LocalDate.now(),"aers","rtgd",1.0,1,1,1,1);
-      //  super.create(alcohol);
         return "alcoholForm";
     }
 
@@ -97,6 +95,22 @@ public class JspAlcoholController extends AbstarctAlcoholController {
         Alcohol alcohol = new Alcohol();
         alcohol.setGoodsReceiptDate(LocalDate.now());
         alcohol.setCategory("водка");
+        model.addAttribute("alcohol",alcohol);
+        return "alcoholForm";
+    }
+
+    /*-----Beer-----*/
+    @GetMapping("category/beer")
+    public String categoryBeer(Model model){
+        model.addAttribute("categoryBeer",super.getCategory("пиво"));
+        return "alcoholCategoryBeer";
+    }
+
+    @GetMapping("/create/beer")
+    public String createBeer(Model model){
+        Alcohol alcohol = new Alcohol();
+        alcohol.setGoodsReceiptDate(LocalDate.now());
+        alcohol.setCategory("пиво");
         model.addAttribute("alcohol",alcohol);
         return "alcoholForm";
     }
