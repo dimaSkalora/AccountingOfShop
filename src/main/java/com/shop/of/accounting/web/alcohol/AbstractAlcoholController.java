@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDate;
 import java.util.List;
 
-public abstract class AbstarctAlcoholController {
+public abstract class AbstractAlcoholController {
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     @Autowired

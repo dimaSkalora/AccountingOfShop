@@ -1,11 +1,9 @@
 package com.shop.of.accounting.web.alcohol;
 
-import com.shop.of.accounting.AuthorizedUser;
 import com.shop.of.accounting.model.Alcohol;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
@@ -13,7 +11,7 @@ import java.util.Objects;
 
 @Controller
 @RequestMapping("alcohols")
-public class JspAlcoholController extends AbstarctAlcoholController {
+public class JspAlcoholController extends AbstractAlcoholController {
 
     @GetMapping
     public String alcohols(Model model){
@@ -29,6 +27,8 @@ public class JspAlcoholController extends AbstarctAlcoholController {
 
     @GetMapping("/update")
     public String update(HttpServletRequest request, Model model){
+        String s1 = request.getRequestURI();
+        System.out.println(s1);
         model.addAttribute("alcohol",super.get(getId(request)));
         return "alcoholForm";
     }
@@ -39,24 +39,8 @@ public class JspAlcoholController extends AbstarctAlcoholController {
         return "alcoholForm";
     }
 
-/*    @PostMapping()
-    public String updateOrCreate(HttpServletRequest request){
-        Alcohol alcohol = new Alcohol(LocalDate.parse(request.getParameter("goodsReceiptDate")),
-                request.getParameter("category"), request.getParameter("productName"),
-                Double.parseDouble(request.getParameter("liter")), Integer.parseInt(request.getParameter("balanceOnTheFirstDayOfTheMonth")),
-                Integer.parseInt(request.getParameter("receivedForMonth")), Integer.parseInt(request.getParameter("soldForMonth")),
-                Integer.parseInt(request.getParameter("balanceOnTheLastDayOfTheMonth")));
 
-        System.out.println(alcohol);
-        if(request.getParameter("id").isEmpty())
-            super.create(alcohol);
-        else
-            super.update(alcohol,getId(request));
-
-        return "redirect:/alcohols";
-    }*/
-
-    @PostMapping("/save")
+/*    @PostMapping("/save")
     public String save(@ModelAttribute("alcohol") Alcohol alcohol, int id){
         if(alcohol.isNew()){
             super.create(alcohol);
@@ -65,22 +49,46 @@ public class JspAlcoholController extends AbstarctAlcoholController {
             super.update(alcohol,id);
         }
         return "redirect:/alcohols";
+    }*/
+    @PostMapping("/save")
+    public String save(Alcohol alcohol ){
+        if(alcohol.isNew()){
+            super.create(alcohol);
+        }
+        else{
+            super.update(alcohol,alcohol.getId());
+        }
+            return "redirect:/alcohols";
     }
 
     /*-----WINE-----*/
     @GetMapping("category/wine")
     public String categoryWine(Model model){
+        Alcohol alcohol = new Alcohol();
+        alcohol.setGoodsReceiptDate(LocalDate.now());
+        alcohol.setCategory("вино");
+        model.addAttribute("alcohol",alcohol );
         model.addAttribute("categoryWine",super.getCategory("вино"));
         return "alcoholCategoryWine";
     }
-
     @GetMapping("/create/wine")
-    public String createWine(Model model ){
+    public String createWine(Model model){
         Alcohol alcohol = new Alcohol();
         alcohol.setGoodsReceiptDate(LocalDate.now());
         alcohol.setCategory("вино");
         model.addAttribute("alcohol",alcohol );
         return "alcoholForm";
+    }
+
+    @PostMapping("/saveWine")
+    public String saveWine(Alcohol alcohol ){
+        if(alcohol.isNew()){
+            super.create(alcohol);
+        }
+        else{
+            super.update(alcohol,alcohol.getId());
+        }
+        return "redirect:/alcoholCategoryWine";
     }
 
     /*-----Vodka-----*/
@@ -114,7 +122,6 @@ public class JspAlcoholController extends AbstarctAlcoholController {
         model.addAttribute("alcohol",alcohol);
         return "alcoholForm";
     }
-
 
 
     private int getId(HttpServletRequest request) {
