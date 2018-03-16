@@ -1,12 +1,16 @@
 package com.shop.of.accounting.web.user;
 
+import com.shop.of.accounting.model.Role;
 import com.shop.of.accounting.model.User;
 import com.shop.of.accounting.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class AbstractUserController {
     protected final Logger log = LoggerFactory.getLogger(getClass());
@@ -28,6 +32,10 @@ public abstract class AbstractUserController {
         log.info("create {}", user);
         if(!user.isNew())
             throw new IllegalArgumentException(user + " must be new (id=null)");
+        Set<Role> role = new HashSet<>();
+        role.add(Role.ROLE_USER);
+        user.setRoles(role);
+        System.out.println(user);
         return service.create(user);
     }
 

@@ -2,8 +2,12 @@ package com.shop.of.accounting.web.user;
 
 import com.shop.of.accounting.AuthorizedUser;
 import com.shop.of.accounting.model.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,16 +23,29 @@ public class JspUserController extends AbstractUserController {
         return "users";
     }
 
-    @PostMapping("/create")
-    public String addUser(@ModelAttribute("user") User user, int id){
+/*    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String addUser(@RequestParam(value = "name", required = true) String name,
+                          @RequestParam(value = "email", required = true) String email,
+                          @RequestParam(value = "password", required = true) String password) {
+        User user = new User();
+        user.setName(name);
+        user.setEmail(email);
+        user.setPassword(password);
         if(user.isNew()){
-      /*      Set<Role> roleSet = new HashSet<>();
-            roleSet.add(Role.ROLE_USER);
-            user.setRoles(roleSet);*/
             super.create(user);
         }
         else{
-            super.update(user,id);
+            super.update(user,user.getId());
+        }
+        return "redirect:/users";
+    }*/
+
+    @PostMapping("/create")
+    public String createOrUpdate(User user) {
+        if (user.isNew()) {
+            super.create(user);
+        } else {
+            super.update(user, user.getId());
         }
         return "redirect:/users";
     }
