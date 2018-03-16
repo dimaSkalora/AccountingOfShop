@@ -10,9 +10,13 @@
 <section>
     <h3>Alcohol title</h3>
     <a href="alcohols/create">Create</a><br>
-    <a href="alcohols/category/wine">Categogy Wine</a><br>
+  <%--  <a href="alcohols/category/wine">Categogy Wine</a><br>
     <a href="alcohols/category/vodka">Category Vodka</a><br>
-    <a href="alcohols/category/beer">Category Beer</a><br>
+    <a href="alcohols/category/beer">Category Beer</a><br>--%>
+    <a href="alcoholCategoryWine">Categogy Wine</a><br>
+    <a href="alcoholCategoryVodka">Categogy Vodka</a><br>
+    <a href="alcoholCategoryBeer">Categogy Beer</a><br>
+
 
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <jsp:include page="fragments/headTag.jsp"/>
@@ -47,8 +48,7 @@
         <button type="submit">Save</button>
         <button onclick="window.history.back()" type="button">Cancel</button>
     </form>
-<%--
-    <c:url var="addAction" value="/alcohols/save"/>
+<%--    <c:url var="addAction" value="/alcohols/save"/>
 
     <form:form action="${addAction}" commandName="alcohol">
         <table>
