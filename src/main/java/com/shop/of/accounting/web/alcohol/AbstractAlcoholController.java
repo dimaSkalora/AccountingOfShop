@@ -3,6 +3,8 @@ package com.shop.of.accounting.web.alcohol;
 import com.shop.of.accounting.AuthorizedUser;
 import com.shop.of.accounting.model.Alcohol;
 import com.shop.of.accounting.service.AlcoholService;
+import com.shop.of.accounting.to.AlcoholWithBalanceNegative;
+import com.shop.of.accounting.util.AlcoholsUtil;
 import com.shop.of.accounting.util.ValidationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +32,7 @@ public abstract class AbstractAlcoholController {
         System.out.println("delete alcohol {} for user {] "+id+" "+userId);
         alcoholService.delete(id,userId);
     }
-
+/*
     public List<Alcohol> getAll(){
         int userId = AuthorizedUser.id();
         log.info("getAll alcohol {} fro user {} ",userId);
@@ -43,6 +45,20 @@ public abstract class AbstractAlcoholController {
         log.info("getCategory alcohol {} fro user {} ",userId);
         System.out.println("getCategory alcohol {} fro user {} "+userId);
         return alcoholService.getCategory(category,userId);
+    }  */
+
+    public List<AlcoholWithBalanceNegative> getAll(){
+        int userId = AuthorizedUser.id();
+        log.info("getAll alcohol {} fro user {} ",userId);
+        System.out.println("getAll alcohol {} fro user {} "+userId);
+        return AlcoholsUtil.getBalanceNegative(alcoholService.getAll(userId));
+    }
+
+    public List<AlcoholWithBalanceNegative> getCategory(String category){
+         int userId = AuthorizedUser.id();
+        log.info("getCategory alcohol {} fro user {} ",userId);
+        System.out.println("getCategory alcohol {} fro user {} "+userId);
+        return AlcoholsUtil.getBalanceNegative(alcoholService.getCategory(category,userId));
     }
 
 
