@@ -137,8 +137,8 @@
             <th></th>
         </thead>
         <c:forEach items="${categoryBeer}" var="alcohol">
-            <jsp:useBean id="alcohol" scope="page" type="com.shop.of.accounting.model.Alcohol"/>
-            <tr>
+            <jsp:useBean id="alcohol" scope="page" type="com.shop.of.accounting.to.AlcoholWithBalanceNegative"/>
+            <tr class="${alcohol.balanceNegative ? 'reduced' : 'normal'}">
                 <td><c:out value="${alcohol.goodsReceiptDate}"/></td>
                 <td><c:out value="${alcohol.category}"/></td>
                 <td><c:out value="${alcohol.productName}"/></td>
@@ -147,8 +147,8 @@
                 <td><c:out value="${alcohol.receivedForMonth}"/></td>
                 <td><c:out value="${alcohol.soldForMonth}"/></td>
                 <td><c:out value="${alcohol.balanceOnTheLastDayOfTheMonth}"/></td>
-                <td><A href="/alcohols/update?id=${alcohol.id}"/>update</td>
-                <td><A href="/alcohols/delete?id=${alcohol.id}"/>delete</td>
+                <td><A href="/alcoholCategoryBeer/update?id=${alcohol.id}"/>update</td>
+                <td><A href="/alcoholCategoryBeer/delete?id=${alcohol.id}"/>delete</td>
             </tr>
         </c:forEach>
     </table>
