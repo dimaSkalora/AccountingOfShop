@@ -22,7 +22,7 @@ public class JspAlcoholWineController extends AbstractAlcoholController{
         alcohol.setCategory("вино");
         model.addAttribute("alcohol",alcohol );
         model.addAttribute("categoryWine",super.getCategory("вино"));
-        saveWine(new Alcohol(LocalDate.now(),"вино","ыпкф",2.0,2,2,2,2));
+        //saveWine(new Alcohol(LocalDate.now(),"вино","ыпкф",2.0,2,2,2,2));
 
         return "alcoholCategoryWine";
     }
@@ -30,9 +30,17 @@ public class JspAlcoholWineController extends AbstractAlcoholController{
     @PostMapping("saveWine")
     public String saveWine(Alcohol alcohol ){
         if(alcohol.isNew()){
+            //Вычисляет остаток на конец месяца
+           alcohol.setBalanceOnTheLastDayOfTheMonth(alcohol.getBalanceOnTheFirstDayOfTheMonth()
+           +alcohol.getReceivedForMonth()-alcohol.getSoldForMonth());
+
             super.create(alcohol);
         }
         else{
+            //Вычисляет остаток на конец месяца
+            alcohol.setBalanceOnTheLastDayOfTheMonth(alcohol.getBalanceOnTheFirstDayOfTheMonth()
+                    +alcohol.getReceivedForMonth()-alcohol.getSoldForMonth());
+
             super.update(alcohol,alcohol.getId());
         }
         return "redirect:/alcoholCategoryWine";

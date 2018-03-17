@@ -106,7 +106,8 @@
                     </form:label>
                 </td>
                 <td>
-                    <form:input path="balanceOnTheLastDayOfTheMonth"/>
+                    <form:input path="balanceOnTheLastDayOfTheMonth" disabled="true"/>
+                    <form:hidden path="balanceOnTheLastDayOfTheMonth"/>
                 </td>
             </tr>
             <tr>

@@ -30,9 +30,17 @@ public class JspAlcoholVodkaController extends AbstractAlcoholController {
     @PostMapping("saveVodka")
     public String saveVodka(Alcohol alcohol ){
         if(alcohol.isNew()){
+            //Вычисляет остаток на конец месяца
+            alcohol.setBalanceOnTheLastDayOfTheMonth(alcohol.getBalanceOnTheFirstDayOfTheMonth()
+                    +alcohol.getReceivedForMonth()-alcohol.getSoldForMonth());
+
             super.create(alcohol);
         }
         else{
+            //Вычисляет остаток на конец месяца
+            alcohol.setBalanceOnTheLastDayOfTheMonth(alcohol.getBalanceOnTheFirstDayOfTheMonth()
+                    +alcohol.getReceivedForMonth()-alcohol.getSoldForMonth());
+
             super.update(alcohol,alcohol.getId());
         }
         return "redirect:/alcoholCategoryVodka";
