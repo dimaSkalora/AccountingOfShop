@@ -13,12 +13,20 @@ INSERT INTO user_roles (role, user_id) VALUES
   ('ROLE_USER', 100001);
 
 INSERT INTO alcohol (goodsReceiptDate, category, productName, liter, balanceOnTheFirstDayOfTheMonth, receivedForMonth, soldForMonth, balanceOnTheLastDayOfTheMonth, user_id) VALUES
-('2018-03-11','вино', 'productName1', 1.5, 3, 5, 4, 1, 100001),
-('2018-03-11','вино', 'productName2', 0.5, 3, 5, 4, 1, 100001),
-('2018-03-11','вино', 'productName3', 0.7, 3, 5, 4, 1, 100001),
-('2018-03-11','вино', 'productName4', 1.5, 3, 5, 4, 1, 100000),
-('2018-03-11','вино', 'productName5', 0.5, 3, 5, 4, 1, 100000),
-('2018-03-11','вино', 'productName6', 0.7, 3, 5, 4, 1, 100000);
+('2018-03-11','вино', 'productName1', 1.5, 3, 5, 4, 4, 100001),
+('2018-03-11','вино', 'productName2', 0.5, 3, 5, 4, 4, 100001),
+('2018-03-11','вино', 'productName3', 0.7, 3, 5, 4, 4, 100001),
+('2018-03-11','вино', 'productName4', 1.5, 3, 5, 4, 4, 100000),
+('2018-03-11','вино', 'productName5', 0.5, 3, 5, 4, 4, 100000),
+('2018-03-11','вино', 'productName6', 0.7, 3, 5, 4, 4, 100000);
+
+INSERT INTO cigarette (goodsReceiptDate, category, productName, amount, balanceOnTheFirstDayOfTheMonth, receivedForMonth, soldForMonth, balanceOnTheLastDayOfTheMonth, user_id) VALUES
+('2018-03-11','с фильтром', 'productName1', 20, 3, 5, 4, 4, 100001),
+('2018-03-11','с фильтром', 'productName2', 20, 3, 5, 4, 4, 100001),
+('2018-03-11','без фильтра', 'productName3', 20, 3, 5, 4, 4, 100001),
+('2018-03-11','с фильтром', 'productName4', 25, 3, 5, 4, 4, 100000),
+('2018-03-11','без фильтра', 'productName5', 20, 3, 5, 4, 4, 100000),
+('2018-03-11','с фильтром', 'productName6', 10, 3, 5, 4, 4, 100000);
 
 
 
