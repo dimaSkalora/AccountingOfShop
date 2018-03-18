@@ -11,11 +11,13 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
 public class JdbcCigaretteRepositoryImpl implements CigaretteRepository {
     //Статический метод фабрики для создания нового BeanPropertyRowMapper (с отображенным классом,
     // указанным только один раз).
