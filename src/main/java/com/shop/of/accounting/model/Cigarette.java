@@ -2,7 +2,7 @@ package com.shop.of.accounting.model;
 
 import java.time.LocalDate;
 
-public class Сigarette extends AbstractBaseEntity{
+public class Cigarette extends AbstractBaseEntity{
     private LocalDate goodsReceiptDate;
     private String category;
     private String productName;
@@ -14,14 +14,14 @@ public class Сigarette extends AbstractBaseEntity{
 
     private User user;
 
-    public Сigarette() {
+    public Cigarette() {
     }
 
-    public Сigarette(LocalDate goodsReceiptDate, String category, String productName, Integer amount, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
+    public Cigarette(LocalDate goodsReceiptDate, String category, String productName, Integer amount, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
         this(null, goodsReceiptDate, category, productName, amount, balanceOnTheFirstDayOfTheMonth, receivedForMonth, soldForMonth, balanceOnTheLastDayOfTheMonth);
     }
 
-    public Сigarette(Integer id, LocalDate goodsReceiptDate, String category, String productName, Integer amount, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
+    public Cigarette(Integer id, LocalDate goodsReceiptDate, String category, String productName, Integer amount, Integer balanceOnTheFirstDayOfTheMonth, Integer receivedForMonth, Integer soldForMonth, Integer balanceOnTheLastDayOfTheMonth) {
         super(id);
         this.goodsReceiptDate = goodsReceiptDate;
         this.category = category;
@@ -107,7 +107,7 @@ public class Сigarette extends AbstractBaseEntity{
 
     @Override
     public String toString() {
-        return "Сigarette{" +
+        return "Cigarette{" +
                 "goodsReceiptDate=" + goodsReceiptDate +
                 ", category='" + category + '\'' +
                 ", productName='" + productName + '\'' +
