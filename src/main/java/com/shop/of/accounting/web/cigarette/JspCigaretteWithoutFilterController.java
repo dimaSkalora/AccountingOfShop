@@ -31,12 +31,12 @@ public class JspCigaretteWithoutFilterController extends AbstractCigaretteContro
         if(cigarette.isNew()){
             //Вычисляет остаток на конец месяца
             cigarette.setBalanceOnTheLastDayOfTheMonth(cigarette.getBalanceOnTheFirstDayOfTheMonth()
-            + cigarette.getReceivedForMonth() + cigarette.getSoldForMonth());
+            + cigarette.getReceivedForMonth() - cigarette.getSoldForMonth());
             super.create(cigarette);
         }else {
             //Вычисляет остаток на конец месяца
             cigarette.setBalanceOnTheLastDayOfTheMonth(cigarette.getBalanceOnTheFirstDayOfTheMonth()
-                    + cigarette.getReceivedForMonth() + cigarette.getSoldForMonth());
+                    + cigarette.getReceivedForMonth() - cigarette.getSoldForMonth());
             super.update(cigarette,cigarette.getId());
         }
         return "redirect:/cigaretteCategoryWithoutFilter";
