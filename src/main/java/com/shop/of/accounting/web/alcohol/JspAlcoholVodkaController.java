@@ -22,7 +22,7 @@ public class JspAlcoholVodkaController extends AbstractAlcoholController {
         alcohol.setCategory("водка");
         model.addAttribute("alcohol",alcohol );
         model.addAttribute("categoryVodka",super.getCategory("водка"));
-        saveVodka(new Alcohol(LocalDate.now(),"водка","ыпкф",2.0,2,2,2,2));
+       // saveVodka(new Alcohol(LocalDate.now(),"водка","ыпкф",2.0,2,2,2,2));
 
         return "alcoholCategoryVodka";
     }
