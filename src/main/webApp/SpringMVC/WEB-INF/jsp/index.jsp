@@ -15,8 +15,13 @@
             <button type="submit">Select</button>
 </form>
     <a href="users">users</a><br>
+    Alcohol<br>
     <a href="alcohols">alcohol</a><br>
     <a href="alcohols/category/wine">wine</a><br>
+    Cigarette<br>
+    <a href="cigaretteCategoryFilter">cigarette Category Filter</a><br>
+    <a href="cigaretteCategoryWithoutFilter">cigarette Category WithoutFilter</a><br>
+
 </section>
 <jsp:include page="fragments/footer.jsp"/>
 </body>
