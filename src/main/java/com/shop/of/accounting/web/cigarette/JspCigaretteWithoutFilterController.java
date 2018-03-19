@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Controller
-@RequestMapping("cigaretteWithoutFilter")
+@RequestMapping("cigaretteCategoryWithoutFilter")
 public class JspCigaretteWithoutFilterController extends AbstractCigaretteController {
 
     @GetMapping
@@ -23,7 +23,7 @@ public class JspCigaretteWithoutFilterController extends AbstractCigaretteContro
         model.addAttribute("cigarette",cigarette);
         model.addAttribute("categoryWithoutFilter",super.getCategory("без фильтра"));
 
-        return "cigaretteWithoutFilter";
+        return "cigaretteCategoryWithoutFilter";
     }
 
     @PostMapping("saveWithoutFilter")
@@ -39,20 +39,20 @@ public class JspCigaretteWithoutFilterController extends AbstractCigaretteContro
                     + cigarette.getReceivedForMonth() + cigarette.getSoldForMonth());
             super.update(cigarette,cigarette.getId());
         }
-        return "redirect:/cigaretteWithoutFilter";
+        return "redirect:/cigaretteCategoryWithoutFilter";
     }
 
     @GetMapping("/delete")
     public String delete(HttpServletRequest request){
         super.delete(getId(request));
-        return "redirect:/cigaretteWithoutFilter";
+        return "redirect:/cigaretteCategoryWithoutFilter";
     }
 
     @GetMapping("/update")
     public String update(HttpServletRequest request, Model model){
         model.addAttribute("cigarette", super.get(getId(request)));
         model.addAttribute("categoryWithoutFilter",super.getCategory("без фильтра"));
-        return "cigaretteWithoutFilter";
+        return "cigaretteCategoryWithoutFilter";
     }
 
     private int getId(HttpServletRequest request) {
