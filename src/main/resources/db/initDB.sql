@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS user_roles;
 DROP TABLE IF EXISTS alcohol;
 DROP TABLE IF EXISTS cigarette;
+DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS global_seq;
 
@@ -55,4 +56,20 @@ CREATE TABLE cigarette (
 
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
-CREATE UNIQUE INDEX cigarette._unique_user_alcoholid_idx ON cigarette (id, user_id)
+CREATE UNIQUE INDEX cigarette_unique_user_cigaretteid_idx ON cigarette (id, user_id)
+
+CREATE TABLE product (
+  id INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
+  user_id INTEGER NOT NULL,
+  goodsReceiptDate DATE NOT NULL,
+  category VARCHAR NOT NULL,
+  productName VARCHAR NOT NULL,
+  amount INTEGER NOT NULL,
+  balanceOnTheFirstDayOfTheMonth INTEGER NOT NULL,
+  receivedForMonth INTEGER NOT NULL,
+  soldForMonth INTEGER NOT NULL,
+  balanceOnTheLastDayOfTheMonth INTEGER NOT NULL,
+
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
+CREATE UNIQUE INDEX product_unique_user_productid_idx ON product (id, user_id)

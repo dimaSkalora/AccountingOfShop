@@ -28,5 +28,13 @@ INSERT INTO cigarette (goodsReceiptDate, category, productName, amount, balanceO
 ('2018-03-11','без фильтра', 'productName5', 20, 3, 5, 4, 4, 100000),
 ('2018-03-11','с фильтром', 'productName6', 10, 3, 5, 4, 4, 100000);
 
+INSERT INTO product (goodsReceiptDate, category, productName, amount, balanceOnTheFirstDayOfTheMonth, receivedForMonth, soldForMonth, balanceOnTheLastDayOfTheMonth, user_id) VALUES
+('2018-03-11','молочные', 'productName1', 20, 3, 5, 4, 4, 100001),
+('2018-03-11','молочные', 'productName2', 20, 3, 5, 4, 4, 100001),
+('2018-03-11','мясные', 'productName3', 20, 3, 5, 4, 4, 100001),
+('2018-03-11','мясные', 'productName4', 25, 3, 5, 4, 4, 100000),
+('2018-03-11','молочные', 'productName5', 20, 3, 5, 4, 4, 100000),
+('2018-03-11','мясные', 'productName6', 10, 3, 5, 4, 4, 100000);
+
 
 
