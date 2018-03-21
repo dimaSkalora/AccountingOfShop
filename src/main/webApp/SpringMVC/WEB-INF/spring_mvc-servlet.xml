@@ -16,6 +16,7 @@
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper" ref="objectMapper"/>
             </bean>
+            <!--Добавляем converter для того что бы джейсон отображал руские текст-->
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                 <property name="supportedMediaTypes">
                     <list>
@@ -26,6 +27,15 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="conversionService">
+        <property name="formatters">
+            <set>
+                <bean class="com.shop.of.accounting.web.converter.DateTimeFormatters.LocalTimeFormatter"/>
+                <bean class="com.shop.of.accounting.web.converter.DateTimeFormatters.LocalDateFormatter"/>
+            </set>
+        </property>
+    </bean>
 
     <import resource="spring_web_app.xml"/>
     <import resource="spring_web_db.xml"/>
