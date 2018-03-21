@@ -67,7 +67,7 @@
                 <td>
                     <form:input path="amount"/>
                 </td>
-            </tr> 
+            </tr>
             <tr>
                 <td>
                     <form:label path="balanceOnTheFirstDayOfTheMonth">
@@ -77,7 +77,7 @@
                 <td>
                     <form:input path="balanceOnTheFirstDayOfTheMonth"/>
                 </td>
-            </tr> 
+            </tr>
             <tr>
                 <td>
                     <form:label path="receivedForMonth">
@@ -87,7 +87,7 @@
                 <td>
                     <form:input path="receivedForMonth"/>
                 </td>
-            </tr> 
+            </tr>
             <tr>
                 <td>
                     <form:label path="soldForMonth">
@@ -113,11 +113,11 @@
                 <td colspan="2">
                     <c:if test="${!empty cigarette.id}">
                         <input type="submit"
-                        value="<spring:message text="Update Cigarette Filter"/> "/>
+                               value="<spring:message text="Update Cigarette Filter"/> "/>
                     </c:if>
                     <c:if test="${empty cigarette.id}">
                         <input type="submit"
-                        value="<spring:message text="Add Cigarette Filter"/> "/>
+                               value="<spring:message text="Add Cigarette Filter"/> "/>
                     </c:if>
                 </td>
             </tr>
