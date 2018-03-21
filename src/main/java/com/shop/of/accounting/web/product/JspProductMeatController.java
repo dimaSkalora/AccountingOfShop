@@ -46,10 +46,10 @@ public class JspProductMeatController extends AbstractProductController{
     @GetMapping("/delete")
     public String delete(HttpServletRequest httpServletRequest){
         super.delete(getId(httpServletRequest));
-        return "productCategoryMeat";
+        return "redirect:/productCategoryMeat";
     }
 
-    @GetMapping("update")
+    @GetMapping("/update")
     public String update(HttpServletRequest httpServletRequest, Model model){
         model.addAttribute("product", super.get(getId(httpServletRequest)));
         model.addAttribute("categoryMeat", super.getCategory("мясные"));
