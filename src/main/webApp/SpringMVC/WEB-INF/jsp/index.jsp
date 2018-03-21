@@ -21,6 +21,9 @@
     Cigarette<br>
     <a href="cigaretteCategoryFilter">cigarette Category Filter</a><br>
     <a href="cigaretteCategoryWithoutFilter">cigarette Category WithoutFilter</a><br>
+    Product<br>
+    <a href="productCategoryMilk">Product Category Milk</a><br>
+    <a href="productCategoryMeat">Product Category Meat</a>
 
 </section>
 <jsp:include page="fragments/footer.jsp"/>
