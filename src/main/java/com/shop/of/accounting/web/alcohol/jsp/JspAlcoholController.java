@@ -1,6 +1,7 @@
-package com.shop.of.accounting.web.alcohol;
+package com.shop.of.accounting.web.alcohol.jsp;
 
 import com.shop.of.accounting.model.Alcohol;
+import com.shop.of.accounting.web.alcohol.AbstractAlcoholController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

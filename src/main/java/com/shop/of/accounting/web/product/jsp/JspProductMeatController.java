@@ -1,6 +1,7 @@
-package com.shop.of.accounting.web.product;
+package com.shop.of.accounting.web.product.jsp;
 
 import com.shop.of.accounting.model.Product;
+import com.shop.of.accounting.web.product.AbstractProductController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,21 +13,22 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Controller
-@RequestMapping("productCategoryMilk")
-public class JspProductMilkController extends AbstractProductController {
+@RequestMapping("productCategoryMeat")
+public class JspProductMeatController extends AbstractProductController {
 
     @GetMapping
     public String getCategory(Model model){
         Product product = new Product();
         product.setGoodsReceiptDate(LocalDate.now());
-        product.setCategory("молочные");
+        product.setCategory("мясные");
         model.addAttribute("product",product);
-        model.addAttribute("categoryMilk", super.getCategory("молочные"));
-        return "productCategoryMilk";
+        model.addAttribute("categoryMeat", super.getCategory("мясные"));
+
+        return "productCategoryMeat";
     }
 
-    @PostMapping("saveMilk")
-    public String save(Product product){
+    @PostMapping("saveMeat")
+    public String saveMeat(Product product){
         if(product.isNew()){
             //Вычисляет остаток на конец месяца
             product.setBalanceOnTheLastDayOfTheMonth(product.getBalanceOnTheFirstDayOfTheMonth()
@@ -39,21 +41,22 @@ public class JspProductMilkController extends AbstractProductController {
             super.update(product, product.getId());
         }
 
-        return "redirect:/productCategoryMilk";
+        return "redirect:/productCategoryMeat";
     }
 
     @GetMapping("/delete")
-    public String delete(HttpServletRequest request){
-        super.delete(getId(request));
-        return "redirect:/productCategoryMilk";
+    public String delete(HttpServletRequest httpServletRequest){
+        super.delete(getId(httpServletRequest));
+        return "redirect:/productCategoryMeat";
     }
 
     @GetMapping("/update")
-    public String update(HttpServletRequest request, Model model){
-        model.addAttribute("product", super.get(getId(request)));
-        model.addAttribute("categoryMilk", super.getCategory("молочные"));
-        return "productCategoryMilk";
+    public String update(HttpServletRequest httpServletRequest, Model model){
+        model.addAttribute("product", super.get(getId(httpServletRequest)));
+        model.addAttribute("categoryMeat", super.getCategory("мясные"));
+        return "productCategoryMeat";
     }
+
 
     private int getId(HttpServletRequest request) {
         String paramId = Objects.requireNonNull(request.getParameter("id"));

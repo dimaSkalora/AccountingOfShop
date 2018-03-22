@@ -1,6 +1,7 @@
-package com.shop.of.accounting.web.cigarette;
+package com.shop.of.accounting.web.cigarette.jsp;
 
 import com.shop.of.accounting.model.Cigarette;
+import com.shop.of.accounting.web.cigarette.AbstractCigaretteController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,22 +13,22 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Controller
-@RequestMapping("cigaretteCategoryFilter")
-public class JspCigaretteFilterController extends AbstractCigaretteController {
+@RequestMapping("cigaretteCategoryWithoutFilter")
+public class JspCigaretteWithoutFilterController extends AbstractCigaretteController {
 
     @GetMapping
-    public String getCategoryFilter(Model model){
+    public String getCategoryWithoutFilter(Model model){
         Cigarette cigarette = new Cigarette();
         cigarette.setGoodsReceiptDate(LocalDate.now());
-        cigarette.setCategory("с фильтром");
+        cigarette.setCategory("без фильтра");
         model.addAttribute("cigarette",cigarette);
-        model.addAttribute("categoryFilter",super.getCategory("с фильтром"));
+        model.addAttribute("categoryWithoutFilter",super.getCategory("без фильтра"));
 
-        return "cigaretteCategoryFilter";
+        return "cigaretteCategoryWithoutFilter";
     }
 
-    @PostMapping("saveFilter")
-    public String saveFilter(Cigarette cigarette){
+    @PostMapping("saveWithoutFilter")
+    public String saveWithoutFilter(Cigarette cigarette){
         if(cigarette.isNew()){
             //Вычисляет остаток на конец месяца
             cigarette.setBalanceOnTheLastDayOfTheMonth(cigarette.getBalanceOnTheFirstDayOfTheMonth()
@@ -37,23 +38,22 @@ public class JspCigaretteFilterController extends AbstractCigaretteController {
             //Вычисляет остаток на конец месяца
             cigarette.setBalanceOnTheLastDayOfTheMonth(cigarette.getBalanceOnTheFirstDayOfTheMonth()
                     + cigarette.getReceivedForMonth() - cigarette.getSoldForMonth());
-            super.update(cigarette, cigarette.getId());
+            super.update(cigarette,cigarette.getId());
         }
-
-        return "redirect:/cigaretteCategoryFilter";
+        return "redirect:/cigaretteCategoryWithoutFilter";
     }
 
     @GetMapping("/delete")
     public String delete(HttpServletRequest request){
         super.delete(getId(request));
-        return "redirect:/cigaretteCategoryFilter";
+        return "redirect:/cigaretteCategoryWithoutFilter";
     }
 
     @GetMapping("/update")
     public String update(HttpServletRequest request, Model model){
         model.addAttribute("cigarette", super.get(getId(request)));
-        model.addAttribute("categoryFilter",super.getCategory("с фильтром"));
-        return "cigaretteCategoryFilter";
+        model.addAttribute("categoryWithoutFilter",super.getCategory("без фильтра"));
+        return "cigaretteCategoryWithoutFilter";
     }
 
     private int getId(HttpServletRequest request) {
