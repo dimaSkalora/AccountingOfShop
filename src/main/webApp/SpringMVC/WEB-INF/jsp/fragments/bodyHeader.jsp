@@ -1,15 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-<%--<header>
-    <a href="${pageContext.request.contextPath}/"></a>&nbsp;|&nbsp;<a href="users">Users</a>
-    <a href="${pageContext.request.contextPath}/"></a>&nbsp;|&nbsp;<a href="alcohols">Alcohols</a>
-    <a href="${pageContext.request.contextPath}/"></a>&nbsp;|&nbsp;<a href="/">home</a>
-    <a href="${pageContext.request.contextPath}/"></a>&nbsp;|&nbsp;<a href="cigaretteCategoryFilter">cigaretteCategoryFilter</a>
-    <a href="${pageContext.request.contextPath}/"></a>&nbsp;|&nbsp;<a href="cigaretteCategoryWithoutFilter">cigaretteCategoryWithoutFilter</a>
-
-</header>--%>
-
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <ul class="nav navbar-nav">
@@ -19,8 +9,6 @@
                     <li><a href="alcoholCategoryVodka">Водка</a></li>
                     <li><a href="alcoholCategoryWine">Вино</a></li>
                     <li><a href="alcoholCategoryBeer">Пиво</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Отделенная ссылка</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -28,8 +16,6 @@
                 <ul id="menu2" class="dropdown-menu">
                     <li><a href="cigaretteCategoryFilter">С фильтром</a></li>
                     <li><a href="cigaretteCategoryWithoutFilter">Без фильтра</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Отделенная ссылка</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -37,8 +23,6 @@
                 <ul id="menu3" class="dropdown-menu">
                     <li><a href="productCategoryMilk">Молочные</a></li>
                     <li><a href="productCategoryMeat">Мясные</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Отделенная ссылка</a></li>
                 </ul>
             </li>
             <li class="dropdown">
