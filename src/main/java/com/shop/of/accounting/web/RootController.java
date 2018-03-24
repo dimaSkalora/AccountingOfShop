@@ -35,4 +35,8 @@ public class RootController {
         return "redirect:alcohols";
     }
 
+    @GetMapping("/goods")
+    public String goods(){
+        return "goods";
+    }
 }
