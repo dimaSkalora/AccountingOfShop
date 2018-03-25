@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import static com.shop.of.accounting.util.DateTimeUtil.parseLocalDate;
+
 @Controller
 @RequestMapping("alcoholCategoryBeer")
 public class JspAlcoholBeerController extends AbstractAlcoholController {
@@ -58,6 +60,20 @@ public class JspAlcoholBeerController extends AbstractAlcoholController {
         System.out.println(s1);
         model.addAttribute("alcohol",super.get(getId(request)));
         model.addAttribute("categoryBeer",super.getCategory("пиво"));
+        return "alcoholCategoryBeer";
+    }
+
+    @PostMapping("/filter")
+    public String getBetween(HttpServletRequest request, Model model) {
+        LocalDate startDate = parseLocalDate(request.getParameter("startDate"));
+        LocalDate endDate = parseLocalDate(request.getParameter("endDate"));
+        Alcohol alcohol = new Alcohol();
+        alcohol.setGoodsReceiptDate(LocalDate.now());
+        alcohol.setCategory("пиво");
+        model.addAttribute("alcohol",alcohol );
+        model.addAttribute("categoryBeer", super.getBetween(startDate, endDate));
+        model.addAttribute("categoryBeer",super.getCategory("пиво"));
+        System.out.println(super.getBetween(startDate,endDate));
         return "alcoholCategoryBeer";
     }
 

@@ -70,10 +70,9 @@ public class RestAlcoholController extends AbstractAlcoholController {
     public void update(@Valid @RequestBody Alcohol alcohol, @PathVariable("id") int id) {
         super.update(alcohol, id);
     }
-
     @Override
     @GetMapping(value = "/filter")//?startDate=2018-03-11&endDate=2018-03-16
-    public List<Alcohol> getBetween(@RequestParam(value = "startDate", required = false) LocalDate startDate,
+    public List<AlcoholWithBalanceNegative> getBetween(@RequestParam(value = "startDate", required = false) LocalDate startDate,
                                                @RequestParam(value = "endDate", required = false) LocalDate endDate) {
         return super.getBetween(startDate, endDate);
     }

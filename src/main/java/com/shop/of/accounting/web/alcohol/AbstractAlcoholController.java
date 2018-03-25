@@ -78,7 +78,7 @@ public abstract class AbstractAlcoholController {
         alcoholService.update(alcohol,userId);
     }
 
-    public List<Alcohol> getBetween(LocalDate startDate, LocalDate endDate) {
+    public List<AlcoholWithBalanceNegative> getBetween(LocalDate startDate, LocalDate endDate) {
         final LocalDate MIN_DATE = LocalDate.of(1, 1, 1);
         final LocalDate MAX_DATE = LocalDate.of(3000, 1, 1);
         int userId = AuthorizedUser.id();
@@ -89,7 +89,12 @@ public abstract class AbstractAlcoholController {
                 startDate != null ? startDate : MIN_DATE,
                 endDate != null ? endDate : MAX_DATE, userId);
 
-        return alcoholDateFiltered;
+      /*  return AlcoholsUtil.getFilterBalanceNegative(alcoholDateFiltered,
+                startDate != null ? startDate : LocalDate.MIN,
+                endDate != null ? endDate : LocalDate.MAX
+        );*/
+        return AlcoholsUtil.getBalanceNegative(alcoholDateFiltered);
+
     }
 
 }
