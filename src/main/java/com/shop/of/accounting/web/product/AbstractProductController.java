@@ -57,7 +57,7 @@ public abstract class AbstractProductController {
         return productService.update(product,userId);
     }
 
-    public List<Product> getBetween(LocalDate startDate, LocalDate endDate) {
+    public List<ProductWithBalanceNegative> getBetween(LocalDate startDate, LocalDate endDate) {
         final LocalDate MIN_DATE = LocalDate.of(1, 1, 1);
         final LocalDate MAX_DATE = LocalDate.of(3000, 1, 1);
         int userId = AuthorizedUser.id();
@@ -69,7 +69,7 @@ public abstract class AbstractProductController {
                 startDate != null ? startDate : MIN_DATE,
                 endDate != null ? endDate : MAX_DATE, userId);
 
-        return productDateFiltered;
+        return ProductsUtil.getBalanceNeagtive(productDateFiltered);
     }
 
 }

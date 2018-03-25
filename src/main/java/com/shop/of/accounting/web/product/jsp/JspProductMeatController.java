@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import static com.shop.of.accounting.util.DateTimeUtil.parseLocalDate;
+
 @Controller
 @RequestMapping("productCategoryMeat")
 public class JspProductMeatController extends AbstractProductController {
@@ -54,6 +56,20 @@ public class JspProductMeatController extends AbstractProductController {
     public String update(HttpServletRequest httpServletRequest, Model model){
         model.addAttribute("product", super.get(getId(httpServletRequest)));
         model.addAttribute("categoryMeat", super.getCategory("мясные"));
+        return "productCategoryMeat";
+    }
+
+    @PostMapping("/filter")
+    public String getBetween(HttpServletRequest request, Model model) {
+        LocalDate startDate = parseLocalDate(request.getParameter("startDate"));
+        LocalDate endDate = parseLocalDate(request.getParameter("endDate"));
+        Product product = new Product();
+        product.setGoodsReceiptDate(LocalDate.now());
+        product.setCategory("мясные");
+        model.addAttribute("product",product);
+        model.addAttribute("categoryMeat", super.getBetween(startDate, endDate));
+        model.addAttribute("categoryMeat", super.getCategory("мясные"));
+        System.out.println(super.getBetween(startDate,endDate));
         return "productCategoryMeat";
     }
 

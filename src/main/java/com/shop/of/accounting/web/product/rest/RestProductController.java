@@ -78,7 +78,7 @@ public class RestProductController extends AbstractProductController {
     @GetMapping("/filter")//?startDate=2018-03-11&endDate=2018-03-16
     //@RequestParam - Аннотации, указывающие, что параметр метода должен быть привязан к параметру веб-запроса.
     //required - Требуется ли параметр.
-    public List<Product> getBetween(@RequestParam(value = "startDate", required = false) LocalDate startDate,
+    public List<ProductWithBalanceNegative> getBetween(@RequestParam(value = "startDate", required = false) LocalDate startDate,
                                     @RequestParam(value = "endDate", required = false) LocalDate endDate) {
         return super.getBetween(startDate, endDate);
     }
