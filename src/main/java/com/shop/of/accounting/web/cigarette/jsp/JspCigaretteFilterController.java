@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import static com.shop.of.accounting.util.DateTimeUtil.parseLocalDate;
+
 @Controller
 @RequestMapping("cigaretteCategoryFilter")
 public class JspCigaretteFilterController extends AbstractCigaretteController {
@@ -54,6 +56,20 @@ public class JspCigaretteFilterController extends AbstractCigaretteController {
     public String update(HttpServletRequest request, Model model){
         model.addAttribute("cigarette", super.get(getId(request)));
         model.addAttribute("categoryFilter",super.getCategory("с фильтром"));
+        return "cigaretteCategoryFilter";
+    }
+
+    @PostMapping("/filter")
+    public String getBetween(HttpServletRequest request, Model model) {
+        LocalDate startDate = parseLocalDate(request.getParameter("startDate"));
+        LocalDate endDate = parseLocalDate(request.getParameter("endDate"));
+        Cigarette cigarette = new Cigarette();
+        cigarette.setGoodsReceiptDate(LocalDate.now());
+        cigarette.setCategory("с фильтром");
+        model.addAttribute("cigarette",cigarette);
+        model.addAttribute("categoryFilter", super.getBetween(startDate, endDate));
+        model.addAttribute("categoryFilter",super.getCategory("с фильтром"));
+
         return "cigaretteCategoryFilter";
     }
 

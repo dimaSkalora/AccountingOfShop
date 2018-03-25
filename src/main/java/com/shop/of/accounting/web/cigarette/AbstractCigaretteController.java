@@ -57,7 +57,7 @@ public abstract class AbstractCigaretteController {
         return cigaretteService.update(cigarette,userId);
     }
 
-    public List<Cigarette> getBetween(LocalDate startDate, LocalDate endDate) {
+    public List<CigarettelWithBalanceNegative> getBetween(LocalDate startDate, LocalDate endDate) {
         final LocalDate MIN_DATE = LocalDate.of(1, 1, 1);
         final LocalDate MAX_DATE = LocalDate.of(3000, 1, 1);
         int userId = AuthorizedUser.id();
@@ -68,6 +68,6 @@ public abstract class AbstractCigaretteController {
                 startDate != null ? startDate : MIN_DATE,
                 endDate != null ? endDate : MAX_DATE, userId);
 
-        return cigaretteDateFiltered;
+        return CigarettesUtil.getBalanceNeagtive(cigaretteDateFiltered);
     }
 }
