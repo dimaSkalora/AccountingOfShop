@@ -101,6 +101,12 @@ public class JdbcAlcoholRepositoryImpl implements AlcoholRepository {
     }
 
     @Override
+    public List<Alcohol> getSearchByProductName(String productName, String category, int userId) {
+        return jdbcTemplate.query("SELECT * FROM alcohol WHERE productname=? AND category=? AND user_id=? ORDER BY goodsreceiptdate",
+        new AlcoholRowMapper(),productName,category,userId);
+    }
+
+    @Override
     public List<Alcohol> getBetween(LocalDate startDate, LocalDate endDate, int userId) {
         return jdbcTemplate.query(
                 "SELECT * FROM alcohol WHERE user_id=?  AND goodsReceiptDate BETWEEN  ? AND ? ORDER BY goodsReceiptDate DESC",

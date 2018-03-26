@@ -11,6 +11,7 @@ public interface CigaretteRepository {
     Cigarette get(int id, int userId);
     List<Cigarette> getAll(int userId);
     List<Cigarette> getCategory(String category, int userId);
+    List<Cigarette> getSearchByProductName(String productName, String category, int userId);
     // ORDERED dateTime desc
     List<Cigarette> getBetween(LocalDate startDate, LocalDate endDate, int userId);
     default Cigarette getWithUser(int id, int userId) {

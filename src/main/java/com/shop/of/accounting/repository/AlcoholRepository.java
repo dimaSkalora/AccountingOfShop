@@ -11,6 +11,7 @@ public interface AlcoholRepository {
     Alcohol get(int id, int userId);
     List<Alcohol> getAll(int userId);
     List<Alcohol> getCategory(String category, int userId);
+    List<Alcohol> getSearchByProductName(String productName, String category, int userId);
     // ORDERED dateTime desc
     List<Alcohol> getBetween(LocalDate startDate, LocalDate endDate, int userId);
     default Alcohol getWithUser(int id, int userId) {

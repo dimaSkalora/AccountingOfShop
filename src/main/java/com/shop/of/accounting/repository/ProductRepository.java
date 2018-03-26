@@ -11,6 +11,7 @@ public interface ProductRepository {
     Product get(int id, int userId );
     List<Product> getAll(int userId);
     List<Product> getCategory(String category, int userId);
+    List<Product> getSearchByProductName(String productName, String category, int userId);
     // ORDERED date desc
     List<Product> getBetween(LocalDate startDate, LocalDate endDate, int userId);
     default Product getWithUser(int id, int userId) {

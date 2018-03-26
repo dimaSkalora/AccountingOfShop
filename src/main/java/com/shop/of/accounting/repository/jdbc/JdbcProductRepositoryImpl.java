@@ -104,6 +104,12 @@ public class JdbcProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public List<Product> getSearchByProductName(String productName, String category, int userId) {
+        return jdbcTemplate.query("SELECT * FROM product WHERE productname=? AND category=? AND user_id=? ORDER BY goodsreceiptdate",
+                new ProductRowMapper(),productName, category, userId);
+    }
+
+    @Override
     public List<Product> getBetween(LocalDate startDate, LocalDate endDate, int userId) {
         return jdbcTemplate.query(
                 "SELECT * FROM product WHERE user_id=?  AND goodsReceiptDate"

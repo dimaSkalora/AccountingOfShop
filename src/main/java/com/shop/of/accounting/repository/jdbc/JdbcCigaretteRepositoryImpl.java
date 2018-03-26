@@ -106,6 +106,12 @@ public class JdbcCigaretteRepositoryImpl implements CigaretteRepository {
     }
 
     @Override
+    public List<Cigarette> getSearchByProductName(String productName, String category, int userId) {
+        return jdbcTemplate.query("SELECT * FROM cigarette WHERE productname=? AND category=? AND user_id=? ORDER BY goodsreceiptdate",
+                new CigaretteRowMapper(),productName,category,userId);
+    }
+
+    @Override
     public List<Cigarette> getBetween(LocalDate startDate, LocalDate endDate, int userId) {
         return jdbcTemplate.query(
                 "SELECT * FROM cigarette WHERE user_id=?  AND goodsReceiptDate"
