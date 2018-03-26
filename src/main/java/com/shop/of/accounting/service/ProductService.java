@@ -12,6 +12,7 @@ public interface ProductService {
     List<Product> getBetweenDates(LocalDate startDate, LocalDate endDate, int userId) throws NotFoundException;
     List<Product> getAll(int userId);
     List<Product> getCategory(String category, int userId);
+    List<Product> getSearchByProductName(String productName, String category, int userId);
     Product update(Product product, int userId) throws NotFoundException;
     Product create(Product product, int userId);
     Product getWithUser(int id, int userId);

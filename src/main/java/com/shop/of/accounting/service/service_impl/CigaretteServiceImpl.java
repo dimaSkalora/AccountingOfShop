@@ -1,4 +1,4 @@
-package com.shop.of.accounting.service.jdbc;
+package com.shop.of.accounting.service.service_impl;
 
 import com.shop.of.accounting.model.Cigarette;
 import com.shop.of.accounting.repository.CigaretteRepository;
@@ -13,12 +13,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class JdbcCigaretteServiceImpl implements CigaretteService {
+public class CigaretteServiceImpl implements CigaretteService {
 
     private final CigaretteRepository cigaretteRepository;
 
     @Autowired
-    public JdbcCigaretteServiceImpl(CigaretteRepository cigaretteRepository) {
+    public CigaretteServiceImpl(CigaretteRepository cigaretteRepository) {
         this.cigaretteRepository=cigaretteRepository;
     }
 
@@ -48,6 +48,11 @@ public class JdbcCigaretteServiceImpl implements CigaretteService {
     @Override
     public List<Cigarette> getCategory(String category, int userId) {
         return cigaretteRepository.getCategory(category,userId);
+    }
+
+    @Override
+    public List<Cigarette> getSearchByProductName(String productName, String category, int userId) {
+        return cigaretteRepository.getSearchByProductName(productName,category,userId);
     }
 
     @Override

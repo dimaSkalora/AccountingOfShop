@@ -1,4 +1,4 @@
-package com.shop.of.accounting.service.jdbc;
+package com.shop.of.accounting.service.service_impl;
 
 import com.shop.of.accounting.model.Alcohol;
 import com.shop.of.accounting.repository.AlcoholRepository;
@@ -48,6 +48,11 @@ public class AlcoholServiceImpl implements AlcoholService {
     @Override
     public List<Alcohol> getCategory(String category, int userId) {
         return alcoholRepository.getCategory(category,userId);
+    }
+
+    @Override
+    public List<Alcohol> getSearchByProductName(String productName, String category, int userId) {
+        return alcoholRepository.getSearchByProductName(productName,category,userId);
     }
 
     @Override

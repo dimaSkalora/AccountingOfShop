@@ -12,6 +12,7 @@ public interface CigaretteService {
     List<Cigarette> getBetweenDates(LocalDate startDate, LocalDate endDate, int userId) throws NotFoundException;
     List<Cigarette> getAll(int userId);
     List<Cigarette> getCategory(String category, int userId);
+    List<Cigarette> getSearchByProductName(String productName, String category, int userId);
     Cigarette update(Cigarette cigarette, int userId) throws NotFoundException;
     Cigarette create(Cigarette cigarette, int userId);
     Cigarette getWithUser(int id, int userId);

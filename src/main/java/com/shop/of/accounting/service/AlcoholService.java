@@ -12,6 +12,7 @@ public interface AlcoholService {
     List<Alcohol> getBetweenDates(LocalDate startDate, LocalDate endDate, int userId) throws NotFoundException;
     List<Alcohol> getAll(int userId);
     List<Alcohol> getCategory(String category, int userId);
+    List<Alcohol> getSearchByProductName(String productName, String category, int userId);
     Alcohol update(Alcohol alcohol, int userId) throws NotFoundException;
     Alcohol create(Alcohol alcohol, int userId);
     Alcohol getWithUser(int id, int userId);

@@ -1,4 +1,4 @@
-package com.shop.of.accounting.service.jdbc;
+package com.shop.of.accounting.service.service_impl;
 
 import com.shop.of.accounting.model.Product;
 import com.shop.of.accounting.repository.ProductRepository;
@@ -13,12 +13,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class JdbcProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService{
 
     private final ProductRepository productRepository;
 
     @Autowired
-    public JdbcProductServiceImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository=productRepository;
     }
 
@@ -48,6 +48,11 @@ public class JdbcProductServiceImpl implements ProductService{
     @Override
     public List<Product> getCategory(String category, int userId) {
         return productRepository.getCategory(category,userId);
+    }
+
+    @Override
+    public List<Product> getSearchByProductName(String productName, String category, int userId) {
+        return productRepository.getSearchByProductName(productName,category,userId);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.shop.of.accounting.service.jdbc;
+package com.shop.of.accounting.service.service_impl;
 
 import com.shop.of.accounting.model.User;
 import com.shop.of.accounting.repository.UserRepository;
