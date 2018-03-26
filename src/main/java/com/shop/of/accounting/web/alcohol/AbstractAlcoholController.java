@@ -89,7 +89,7 @@ public abstract class AbstractAlcoholController {
                 startDate != null ? startDate : MIN_DATE,
                 endDate != null ? endDate : MAX_DATE, userId);
 
-      /*  return AlcoholsUtil.getFilterBalanceNegative(alcoholDateFiltered,
+     /*   return AlcoholsUtil.getFilterBalanceNegative(alcoholDateFiltered,
                 startDate != null ? startDate : LocalDate.MIN,
                 endDate != null ? endDate : LocalDate.MAX
         );*/
