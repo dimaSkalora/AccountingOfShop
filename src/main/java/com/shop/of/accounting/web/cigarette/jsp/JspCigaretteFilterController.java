@@ -29,6 +29,17 @@ public class JspCigaretteFilterController extends AbstractCigaretteController {
         return "cigaretteCategoryFilter";
     }
 
+    @PostMapping("searchByProductName")
+    public String searchByProductName(Model model, HttpServletRequest request){
+        String productParameter = request.getParameter("searchByProductName");
+        Cigarette cigarette = new Cigarette();
+        cigarette.setGoodsReceiptDate(LocalDate.now());
+        cigarette.setCategory("с фильтром");
+        model.addAttribute("cigarette",cigarette);
+        model.addAttribute("categoryFilter",super.getSearchByProductName(productParameter,"с фильтром"));
+        return "cigaretteCategoryFilter";
+    }
+
     @PostMapping("saveFilter")
     public String saveFilter(Cigarette cigarette){
         if(cigarette.isNew()){

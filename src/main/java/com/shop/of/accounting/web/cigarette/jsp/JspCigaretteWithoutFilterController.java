@@ -29,6 +29,17 @@ public class JspCigaretteWithoutFilterController extends AbstractCigaretteContro
         return "cigaretteCategoryWithoutFilter";
     }
 
+    @PostMapping("searchByProductName")
+    public String searchByProductName(Model model, HttpServletRequest request){
+        String productParameter = request.getParameter("searchByProductName");
+        Cigarette cigarette = new Cigarette();
+        cigarette.setGoodsReceiptDate(LocalDate.now());
+        cigarette.setCategory("без фильтра");
+        model.addAttribute("cigarette",cigarette);
+        model.addAttribute("categoryWithoutFilter",super.getSearchByProductName(productParameter,"без фильтра"));
+        return "cigaretteCategoryWithoutFilter";
+    }
+
     @PostMapping("saveWithoutFilter")
     public String saveWithoutFilter(Cigarette cigarette){
         if(cigarette.isNew()){

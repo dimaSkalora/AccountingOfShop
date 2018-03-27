@@ -43,6 +43,13 @@ public abstract class AbstractCigaretteController {
         return CigarettesUtil.getBalanceNeagtive(cigaretteService.getCategory(category,userId));
     }
 
+    public List<CigarettelWithBalanceNegative> getSearchByProductName(String productName, String category){
+        int userId = AuthorizedUser.id();
+        log.info("getSearchByProductName cigarette {} fro user {} ",productName,category,userId);
+        System.out.println("getSearchByProductName cigarette {} fro user {} "+productName+" "+category+" "+userId);
+        return CigarettesUtil.getBalanceNeagtive(cigaretteService.getSearchByProductName(productName,category,userId));
+    }
+
     public Cigarette create(Cigarette cigarette){
         int userId = AuthorizedUser.id();
         ValidationUtil.checkNew(cigarette);
