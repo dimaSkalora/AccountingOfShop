@@ -29,6 +29,17 @@ public class JspProductMeatController extends AbstractProductController {
         return "productCategoryMeat";
     }
 
+    @PostMapping("searchByProductName")
+    public String searchByProductName(Model model, HttpServletRequest request){
+        String productParameter = request.getParameter("searchByProductName");
+        Product product = new Product();
+        product.setGoodsReceiptDate(LocalDate.now());
+        product.setCategory("мясные");
+        model.addAttribute("product",product);
+        model.addAttribute("categoryMeat",super.getSearchByProductName(productParameter,"мясные"));
+        return "productCategoryMeat";
+    }
+
     @PostMapping("saveMeat")
     public String saveMeat(Product product){
         if(product.isNew()){

@@ -43,6 +43,13 @@ public abstract class AbstractProductController {
         return ProductsUtil.getBalanceNeagtive(productService.getCategory(category,userId));
     }
 
+    public List<ProductWithBalanceNegative> getSearchByProductName(String productName, String category){
+        int userId = AuthorizedUser.id();
+        log.info("getSearchByProductName product {} fro user {} ",productName,category,userId);
+        System.out.println("getSearchByProductName product {} fro user {} "+productName+" "+category+" "+userId);
+        return ProductsUtil.getBalanceNeagtive(productService.getSearchByProductName(productName,category,userId));
+    }
+
     public Product create(Product product){
         int userId = AuthorizedUser.id();
         ValidationUtil.checkNew(product);
