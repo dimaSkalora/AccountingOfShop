@@ -156,6 +156,26 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form method="post" action="cigaretteCategoryFilter/searchByProductName">
+                            <dl>
+                                <dt>Search By Product Name</dt>
+                                <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"></dd>
+                            </dl>
+                            <div class="text-right">
+                                <a class="btn btn-danger"  href="cigaretteCategoryFilter">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </a>
+                                <button class="btn btn-primary" type="submit">
+                                    <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="panel panel-default">
             <table class="table table-bordered">

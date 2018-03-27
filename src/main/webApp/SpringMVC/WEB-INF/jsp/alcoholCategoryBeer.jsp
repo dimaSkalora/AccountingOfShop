@@ -3,6 +3,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
+<script type="text/javascript" src="resources/js/addAlcoholValidation.js" defer></script>
+<script type="text/javascript" src="resources/js/dialogUtil.js" defer></script>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <jsp:include page="fragments/bodyHeader.jsp"/>
@@ -14,7 +16,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <c:url var="addAction" value="/alcoholCategoryBeer/saveBeer"/>
-                        <form:form action="${addAction}" commandName="alcohol" cssClass="form-horizontal">
+                        <form:form action="${addAction}" name = "addAlcohol" onsubmit="return(validate());" commandName="alcohol" cssClass="form-horizontal">
                             <table class="table">
                                <tbody>
                                <c:if test="${!empty alcohol.id}">
@@ -141,15 +143,35 @@
                                 <dt>endDate:</dt>
                                 <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
                             </dl>
-                            <div class="panel-footer text-right">
-                                <button class="btn btn-danger" type="reset">
+                            <div class="text-right">
+                                <a class="btn btn-danger"  href="alcoholCategoryBeer">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </button>
+                                </a>
                                 <button class="btn btn-primary" type="submit">
                                     <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                                 </button>
                             </div>
 
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form method="post" action="alcoholCategoryBeer/searchByProductName">
+                            <dl>
+                                <dt>Search By Product Name</dt>
+                                <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"></dd>
+                            </dl>
+                            <div class="text-right">
+                                <a class="btn btn-danger"  href="alcoholCategoryBeer">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </a>
+                                <button class="btn btn-primary" type="submit">
+                                    <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
