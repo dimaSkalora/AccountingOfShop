@@ -56,11 +56,17 @@ public abstract class AbstractAlcoholController {
 
     public List<AlcoholWithBalanceNegative> getCategory(String category){
          int userId = AuthorizedUser.id();
-        log.info("getCategory alcohol {} fro user {} ",userId);
-        System.out.println("getCategory alcohol {} fro user {} "+userId);
+        log.info("getCategory alcohol {} fro user {} ",category,userId);
+        System.out.println("getCategory alcohol {} fro user {} "+category+" "+userId);
         return AlcoholsUtil.getBalanceNegative(alcoholService.getCategory(category,userId));
     }
 
+    public List<AlcoholWithBalanceNegative> getSearchByProductName(String productName, String category){
+         int userId = AuthorizedUser.id();
+        log.info("getSearchByProductName alcohol {} fro user {} ",productName,category,userId);
+        System.out.println("getSearchByProductName alcohol {} fro user {} "+productName+" "+category+" "+userId);
+        return AlcoholsUtil.getBalanceNegative(alcoholService.getSearchByProductName(productName,category,userId));
+    }
 
     public Alcohol create(Alcohol alcohol){
         int userId = AuthorizedUser.id();

@@ -30,6 +30,17 @@ public class JspAlcoholVodkaController extends AbstractAlcoholController {
         return "alcoholCategoryVodka";
     }
 
+    @PostMapping("searchByProductName")
+    public String searchByProductName(Model model, HttpServletRequest request){
+        String productParameter = request.getParameter("searchByProductName");
+        Alcohol alcohol = new Alcohol();
+        alcohol.setGoodsReceiptDate(LocalDate.now());
+        alcohol.setCategory("водка");
+        model.addAttribute("alcohol",alcohol );
+        model.addAttribute("categoryVodka",super.getSearchByProductName(productParameter,"водка"));
+        return "alcoholCategoryVodka";
+    }
+
     @PostMapping("saveVodka")
     public String saveVodka(Alcohol alcohol ){
         if(alcohol.isNew()){

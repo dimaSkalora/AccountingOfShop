@@ -29,6 +29,17 @@ public class JspAlcoholBeerController extends AbstractAlcoholController {
         return "alcoholCategoryBeer";
     }
 
+    @PostMapping("searchByProductName")
+    public String searchByProductName(Model model, HttpServletRequest request){
+        String productParameter = request.getParameter("searchByProductName");
+        Alcohol alcohol = new Alcohol();
+        alcohol.setGoodsReceiptDate(LocalDate.now());
+        alcohol.setCategory("пиво");
+        model.addAttribute("alcohol",alcohol );
+        model.addAttribute("categoryBeer",super.getSearchByProductName(productParameter,"пиво"));
+        return "alcoholCategoryBeer";
+    }
+
     @PostMapping("saveBeer")
     public String saveBeer(Alcohol alcohol ){
         if(alcohol.isNew()){
