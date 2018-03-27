@@ -13,7 +13,7 @@
 
         &lt;!&ndash;no pooling&ndash;&gt;
         <bean id="dataSource"
-              class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+              class="org.springframework.service_impl.datasource.DriverManagerDataSource"
               p:driverClassName="org.hsqldb.jdbcDriver"
               p:url="${database.url}"
               p:username="${database.username}"
@@ -24,18 +24,18 @@
        <context:property-placeholder location="classpath:db/postgres.properties" system-properties-mode="OVERRIDE"/>
 
        <bean id="dataSource"
-             class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-             p:driverClassName="org.apache.tomcat.jdbc.pool.DataSource"
+             class="org.springframework.service_impl.datasource.DriverManagerDataSource"
+             p:driverClassName="org.apache.tomcat.service_impl.pool.DataSource"
              p:url="${database.url}"
              p:username="${database.username}"
              p:password="${database.password}"/>
    </beans>
 
-    <context:component-scan base-package="com.shop.of.accounting.**.repository.jdbc"/>
-    <bean id = "jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <context:component-scan base-package="com.shop.of.accounting.**.repository.service_impl"/>
+    <bean id = "jdbcTemplate" class="org.springframework.service_impl.core.JdbcTemplate">
         <constructor-arg ref="dataSource"/>
     </bean>
-    <bean class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+    <bean class="org.springframework.service_impl.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="dataSource"/>
     </bean>-->
 
