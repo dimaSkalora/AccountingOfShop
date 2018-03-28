@@ -5,6 +5,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
+<script type="text/javascript" src="resources/js/cigareteValidation.js" defer></script>
+<script type="text/javascript" src="resources/js/dialogUtil.js" defer></script>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <jsp:include page="fragments/bodyHeader.jsp"/>
@@ -16,7 +18,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <c:url var="addAction" value="/cigaretteCategoryFilter/saveFilter"/>
-                        <form:form action="${addAction}" commandName="cigarette" cssClass="form-horizontal">
+                        <form:form action="${addAction}"  name = "addCigarette" onsubmit="return(validateCigarette());" commandName="cigarette" cssClass="form-horizontal">
                             <table class="table">
                                 <tbody>
                                 <c:if test="${!empty cigarette.id}">
@@ -143,7 +145,7 @@
                                 <dt>endDate:</dt>
                                 <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
                             </dl>
-                            <div class="panel-footer text-right">
+                            <div class="text-right">
                                 <button class="btn btn-danger" type="reset">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                 </button>
@@ -159,20 +161,22 @@
             <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form method="post" action="cigaretteCategoryFilter/searchByProductName">
+                        <form method="post" action="cigaretteCategoryFilter/searchByProductName" onclick="return (volidateSearchByProductName(this));" >
                             <dl>
                                 <dt>Search By Product Name</dt>
                                 <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"></dd>
+                                <dd>
+                                    <button class="btn btn-primary" type="submit">
+                                        <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                                    </button>
+                                </dd>
                             </dl>
-                            <div class="text-right">
-                                <a class="btn btn-danger"  href="cigaretteCategoryFilter">
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </a>
-                                <button class="btn btn-primary" type="submit">
-                                    <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-                                </button>
-                            </div>
                         </form>
+                        <div class="text-right">
+                            <a class="btn btn-danger"  href="cigaretteCategoryFilter">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -202,8 +206,8 @@
                         <td><c:out value="${cigarette.receivedForMonth}"/></td>
                         <td><c:out value="${cigarette.soldForMonth}"/></td>
                         <td><c:out value="${cigarette.balanceOnTheLastDayOfTheMonth}"/></td>
-                        <td><A href="cigaretteCategoryFilter/update?id=${cigarette.id}"/>update</td>
-                        <td><A href="cigaretteCategoryFilter/delete?id=${cigarette.id}"/>delete</td>
+                        <td><a href="cigaretteCategoryFilter/update?id=${cigarette.id}"/>update</td>
+                        <td><a href="cigaretteCategoryFilter/delete?id=${cigarette.id}"/>delete</td>
                     </tr>
                 </c:forEach>
             </table>
