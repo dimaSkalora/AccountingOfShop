@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
-<script type="text/javascript" src="resources/js/addAlcoholValidation.js" defer></script>
+<script type="text/javascript" src="resources/js/alcoholValidation.js" defer></script>
 <script type="text/javascript" src="resources/js/dialogUtil.js" defer></script>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
@@ -151,7 +151,6 @@
                                     <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                                 </button>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -159,20 +158,22 @@
             <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form method="post" action="alcoholCategoryBeer/searchByProductName">
+                        <form method="post" action="alcoholCategoryBeer/searchByProductName" onclick="return (volidateSearchByProductName(this));" >
                             <dl>
                                 <dt>Search By Product Name</dt>
-                                <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"></dd>
+                                <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"/> </dd>
+                                <dd>
+                                    <button class="btn btn-primary" type="submit">
+                                        <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                                    </button>
+                                </dd>
                             </dl>
-                            <div class="text-right">
-                                <a class="btn btn-danger"  href="alcoholCategoryBeer">
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </a>
-                                <button class="btn btn-primary" type="submit">
-                                    <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-                                </button>
-                            </div>
                         </form>
+                        <div class="text-right">
+                            <a class="btn btn-danger"  href="alcoholCategoryBeer">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
