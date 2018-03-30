@@ -79,7 +79,15 @@ public class JdbcUserRepositoryImpl implements UserRepository {
     @Override
     public User getByEmail(String email) {
         //        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE email=?", ROW_MAPPER, email);
+      /*  List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE email=?", new UserRowMapper(), email);
+        return (User) DataAccessUtils.singleResult(users);*/
+        Map<Integer, Set<Role>> map = new HashMap<>();
+        jdbcTemplate.query("SELECT * FROM user_roles", rs -> {
+            map.computeIfAbsent(rs.getInt("user_id"), userId -> EnumSet.noneOf(Role.class))
+                    .add(Role.valueOf(rs.getString("role")));
+        });
         List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE email=?", new UserRowMapper(), email);
+        users.forEach(u -> u.setRoles(map.get(u.getId())));
         return (User) DataAccessUtils.singleResult(users);
     }
 
