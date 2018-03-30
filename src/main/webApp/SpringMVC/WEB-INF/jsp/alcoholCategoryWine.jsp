@@ -117,7 +117,7 @@
                                 <tr>
                                     <td colspan="2">
                                         <c:if test="${!empty alcohol.id}">
-                                            <input class="btn btn-primary" onclick="return(saveAlcohol2());" type="submit"
+                                            <input class="btn btn-primary" type="submit"
                                                    value="<spring:message text="Update Wine"/>"/>
                                         </c:if>
                                         <c:if test="${empty alcohol.id}">
@@ -151,8 +151,10 @@
                                 <button class="btn btn-primary" onclick="save()" type="submit">
                                     <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                                 </button>
+                                <input type="hidden"
+                                       name="${_csrf.parameterName}"
+                                       value="${_csrf.token}"/>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -169,6 +171,9 @@
                                         <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                                     </button>
                                 </dd>
+                                <input type="hidden"
+                                       name="${_csrf.parameterName}"
+                                       value="${_csrf.token}"/>
                             </dl>
                         </form>
                         <div class="text-right">

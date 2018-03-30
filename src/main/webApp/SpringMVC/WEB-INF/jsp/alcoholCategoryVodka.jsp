@@ -151,6 +151,9 @@
                                 <button class="btn btn-primary" type="submit">
                                     <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                                 </button>
+                                <input type="hidden"
+                                       name="${_csrf.parameterName}"
+                                       value="${_csrf.token}"/>
                             </div>
                         </form>
                     </div>
@@ -168,6 +171,9 @@
                                         <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                                     </button>
                                 </dd>
+                                <input type="hidden"
+                                       name="${_csrf.parameterName}"
+                                       value="${_csrf.token}"/>
                             </dl>
                         </form>
                         <div class="text-right">
