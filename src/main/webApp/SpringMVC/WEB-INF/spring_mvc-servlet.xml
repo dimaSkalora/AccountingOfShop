@@ -9,6 +9,8 @@
 
     <context:annotation-config />
 
+    <import resource="spring-security.xml"/>
+
     <bean class="com.shop.of.accounting.web.json.JacksonObjectMapper" id="objectMapper" factory-method="getMapper"/>
 
     <mvc:annotation-driven conversion-service="conversionService">
