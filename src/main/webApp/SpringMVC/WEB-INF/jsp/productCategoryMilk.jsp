@@ -146,9 +146,9 @@
                                 <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
                             </dl>
                             <div class="text-right">
-                                <button class="btn btn-danger" type="reset">
+                                <a class="btn btn-danger" href="productCategoryMilk">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </button>
+                                </a>
                                 <button class="btn btn-primary" type="submit">
                                     <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                                 </button>
