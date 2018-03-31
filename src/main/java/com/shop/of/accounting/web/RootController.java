@@ -1,6 +1,8 @@
 package com.shop.of.accounting.web;
 
 import com.shop.of.accounting.AuthorizedUser;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,16 +28,9 @@ public class RootController {
         return "test";
     }
 
-    @PostMapping("/setUser")
-    public String setUser(HttpServletRequest request) {
-        int userId = Integer.valueOf(request.getParameter("userId"));
-        AuthorizedUser.setId(userId);
-
-        return "redirect:alcohols";
-    }
-
     @GetMapping("/goods")
     public String goods(){
         return "goods";
     }
+
 }

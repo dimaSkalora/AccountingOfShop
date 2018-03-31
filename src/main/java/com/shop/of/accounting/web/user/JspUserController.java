@@ -4,6 +4,7 @@ import com.shop.of.accounting.AuthorizedUser;
 import com.shop.of.accounting.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -13,6 +14,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+//@Secured("ROLE_ADMIN")
+//@PreAuthorize может проверить авторизацию перед входом в метод.
+// @PreAuthorize проверяется на основе роли или аргумента, передаваемого методу.
+//Ограничивает доступ к методам перед их вызовом, опираясь на результат вычисления выражения
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 @RequestMapping("/users")
 public class JspUserController extends AbstractUserController {
 
