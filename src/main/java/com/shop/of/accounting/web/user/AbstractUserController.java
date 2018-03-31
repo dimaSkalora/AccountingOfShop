@@ -48,6 +48,9 @@ public abstract class AbstractUserController {
         log.info("update {} with id={}", user, id);
         if (user.isNew()) {
             user.setId(id);
+            Set<Role> role = new HashSet<>();
+            role.add(Role.ROLE_USER);
+            user.setRoles(role);
         } else if (user.getId() != id) {
             throw new IllegalArgumentException(user + " must be with id=" + id);
         }

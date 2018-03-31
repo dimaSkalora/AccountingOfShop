@@ -20,6 +20,11 @@
 
     <bean class="com.shop.of.accounting.web.json.JacksonObjectMapper" id="objectMapper" factory-method="getMapper"/>
 
+    <!--Перехватчик обработчика должен реализовать интерфейс HandlerInterceptor-->
+    <mvc:interceptors>
+        <bean class="com.shop.of.accounting.web.interceptor.ModelInterceptor"/>
+    </mvc:interceptors>
+
     <mvc:annotation-driven conversion-service="conversionService">
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">

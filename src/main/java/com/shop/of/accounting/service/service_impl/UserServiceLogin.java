@@ -16,6 +16,8 @@ public class UserServiceLogin implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = userRepository.getByEmail(s.toLowerCase());
+        AuthorizedUser.setUser(user);
+        System.out.println(" AuthorizedUser.setUser "+user);
         AuthorizedUser.setId(user.getId());
         System.out.println(" loadUserByUsername "+AuthorizedUser.id());
         System.out.println(user.getRoles());

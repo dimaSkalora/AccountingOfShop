@@ -67,6 +67,7 @@
                             </sec:authorize>
                             <%--   <a class="btn btn-info" href="profile"><sec:authentication property="principal.userTo.name"/> <spring:message code="app.profile"/></a>--%>
 
+                            <a class="btn btn-info" href="profile">profile</a>
                             <button class="btn btn-primary" type="submit">
                                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
                             </button>
