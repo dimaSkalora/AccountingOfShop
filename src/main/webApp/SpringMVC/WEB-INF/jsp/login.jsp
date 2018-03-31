@@ -23,6 +23,7 @@
         <br/>
         <p>
 
+            <a class="btn btn-lg btn-success" href="register">Add User&raquo;</a>
             <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('new@dbdd', 'passwordNew')">
                  User
             </button>
