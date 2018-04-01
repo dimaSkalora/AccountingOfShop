@@ -12,7 +12,7 @@
 <div class="jumbotron">
     <div class="container">
         <%--@elvariable id="user" type="com.shop.of.accounting.model.User"--%>
-        <h2>${user.name}  profile</h2>
+            <h2>${userTo.name} ${register ? 'register' : 'profile'}</h2>
 
         <form:form modelAttribute="user" class="form-horizontal" method="post" action="${register ? 'register' : 'profile'}"
                    charset="utf-8" accept-charset="UTF-8">
