@@ -5,6 +5,7 @@ import com.shop.of.accounting.repository.UserRepository;
 import com.shop.of.accounting.service.UserService;
 import com.shop.of.accounting.util.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -16,16 +17,22 @@ import static com.shop.of.accounting.util.ValidationUtil.checkNotFoundWithId;
 @Service
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
+    //Обычно PasswordEncoderиспользуется для хранения пароля, который необходимо сравнить с
+    // предоставленным пользователем паролем во время аутентификации.
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public User create(User user) {
         //Убедитесь, что объект отсутствует null.
         Assert.notNull(user,"user must not be null");
+        //кодируем пароль
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
@@ -48,6 +55,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void update(User user) throws NotFoundException {
         Assert.notNull(user,"user must not be null");
+        //кодируем пароль
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         checkNotFoundWithId(userRepository.save(user),user.getId());
     }
 
