@@ -12,16 +12,19 @@
 <div class="jumbotron">
     <div class="container">
         <%--@elvariable id="user" type="com.shop.of.accounting.model.User"--%>
-            <h2>${userTo.name} ${register ? 'register' : 'profile'}</h2>
+            <h2>${user.name} ${register ? 'register' : 'profile'}</h2>
 
         <form:form modelAttribute="user" class="form-horizontal" method="post" action="${register ? 'register' : 'profile'}"
                    charset="utf-8" accept-charset="UTF-8">
 
             <accounting_of_shop:inputField label='userName' name="name"/>
+            <form:errors path="email" cssClass="error"/>
 
             <accounting_of_shop:inputField label='userEmail' name="email"/>
+            <form:errors path="email" cssClass="error"/>
 
             <accounting_of_shop:inputField label='userPassword' name="password" inputType="password"/>
+            <form:errors path="password" cssClass="error"/>
 
             <div class="form-group">
                 <div class="col-xs-offset-2 col-xs-10">

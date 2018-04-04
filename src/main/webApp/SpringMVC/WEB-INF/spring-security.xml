@@ -17,7 +17,7 @@
     <beans:bean class="org.springframework.security.crypto.factory.PasswordEncoderFactories" id="passwordEncoder" factory-method="createDelegatingPasswordEncoder"/>
 
     -->
-   <!-- <beans:bean name="noopEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>-->
+    <beans:bean name="noopEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
 
     <http>
         <intercept-url pattern="/login" access="isAnonymous()"/>
@@ -49,11 +49,12 @@
         </authentication-provider>
     </authentication-manager>-->
 
-    <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+  <!--  <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />-->
 
     <authentication-manager >
         <authentication-provider user-service-ref="userServiceLogin">
-            <password-encoder ref="bcryptEncoder"/>
+            <!--<password-encoder ref="bcryptEncoder"/>-->
+            <password-encoder ref="noopEncoder"/>
         </authentication-provider>
     </authentication-manager>
 
