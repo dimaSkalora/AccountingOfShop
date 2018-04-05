@@ -12,7 +12,7 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 <div class="jumbotron">
     <div class="container">
-        <h3 class="text-center">Product Category Milk</h3>
+        <h3 class="text-center"><spring:message code="product.productCategoryMilk"/> </h3>
         <div class="row">
             <div class="col-sm-6">
                 <div class="panel panel-default">
@@ -37,7 +37,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="goodsReceiptDate">
-                                            <spring:message text="goodsReceiptDate"/>
+                                            <spring:message code="product.goodsReceiptDate"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -47,7 +47,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="category">
-                                            <spring:message text="category"/>
+                                            <spring:message code="product.category"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -57,7 +57,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="productName">
-                                            <spring:message text="productName"/>
+                                            <spring:message code="product.productName"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -67,7 +67,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="amount">
-                                            <spring:message text="amount"/>
+                                            <spring:message code="product.amount"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -77,7 +77,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="balanceOnTheFirstDayOfTheMonth">
-                                            <spring:message text="balanceOnTheFirstDayOfTheMonth"/>
+                                            <spring:message code="product.balanceOnTheFirstDayOfTheMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -87,7 +87,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="receivedForMonth">
-                                            <spring:message text="receivedForMonth"/>
+                                            <spring:message code="product.receivedForMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -97,7 +97,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="soldForMonth">
-                                            <spring:message text="soldForMonth"/>
+                                            <spring:message code="product.soldForMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -107,7 +107,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="balanceOnTheLastDayOfTheMonth">
-                                            <spring:message text="balanceOnTheLastDayOfTheMonth"/>
+                                            <spring:message code="product.balanceOnTheLastDayOfTheMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -119,11 +119,11 @@
                                     <td colspan="2">
                                         <c:if test="${!empty product.id}">
                                             <input class="btn btn-primary" type="submit"
-                                                   value="<spring:message text="Update Category Milk"/>"/>
+                                                   value="<spring:message code="product.editMilk"/>"/>
                                         </c:if>
                                         <c:if test="${empty product.id}">
                                             <input class="btn btn-primary" type="submit"
-                                                   value="<spring:message text="Add Category Milk"/>"/>
+                                                   value="<spring:message code="product.addMilk"/>"/>
                                         </c:if>
                                     </td>
                                 </tr>
@@ -138,11 +138,11 @@
                     <div class="panel-body">
                         <form method="post" action="productCategoryMilk/filter">
                             <dl>
-                                <dt>startDate:</dt>
+                                <dt><spring:message code="product.startDate"/></dt>
                                 <dd><input type="date" name="startDate" value="${param.startDate}"></dd>
                             </dl>
                             <dl>
-                                <dt>endDate:</dt>
+                                <dt><spring:message code="product.endDate"/></dt>
                                 <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
                             </dl>
                             <div class="text-right">
@@ -165,7 +165,7 @@
                     <div class="panel-body">
                         <form method="post" action="productCategoryMilk/searchByProductName" onclick="return (volidateSearchByProductName(this));" >
                             <dl>
-                                <dt>Search By Product Name</dt>
+                                <dt><spring:message code="product.filter"/></dt>
                                 <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"></dd>
                                 <dd>
                                     <button class="btn btn-primary" type="submit">
@@ -189,14 +189,14 @@
         <div class="panel panel-default">
             <table class="table table-bordered">
                 <thead>
-                    <th>Goods Receipt Date</th>
-                    <th>Category</th>
-                    <th>Product Name</th>
-                    <th>Amount</th>
-                    <th>Balance On The First Day Of The Month</th>
-                    <th>Received For Month</th>
-                    <th>Sold For Month</th>
-                    <th>Balance On The Last Day Of The Month</th>
+                    <th><spring:message code="product.goodsReceiptDate"/></th>
+                    <th><spring:message code="product.category"/></th>
+                    <th><spring:message code="product.productName"/></th>
+                    <th><spring:message code="product.amount"/></th>
+                    <th><spring:message code="product.balanceOnTheFirstDayOfTheMonth"/></th>
+                    <th><spring:message code="product.receivedForMonth"/></th>
+                    <th><spring:message code="product.soldForMonth"/></th>
+                    <th><spring:message code="product.balanceOnTheLastDayOfTheMonth"/></th>
                     <th></th>
                     <th></th>
                 </thead>
@@ -211,8 +211,8 @@
                         <td><c:out value="${product.receivedForMonth}"/></td>
                         <td><c:out value="${product.soldForMonth}"/></td>
                         <td><c:out value="${product.balanceOnTheLastDayOfTheMonth}"/></td>
-                        <td><A href="productCategoryMilk/update?id=${product.id}"/>update</td>
-                        <td><A href="productCategoryMilk/delete?id=${product.id}"/>delete</td>
+                        <td><A href="productCategoryMilk/update?id=${product.id}"/><spring:message code="product.update"/></td>
+                        <td><A href="productCategoryMilk/delete?id=${product.id}"/><spring:message code="product.delete"/></td>
                     </tr>
                 </c:forEach>
             </table>
