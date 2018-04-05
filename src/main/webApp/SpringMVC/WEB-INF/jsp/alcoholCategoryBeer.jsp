@@ -10,7 +10,7 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 <div class="jumbotron">
     <div class="container">
-        <h3 class="text-center">Alcohol Category Beer</h3>
+        <h3 class="text-center"><spring:message code="alcohol.alcoholCategoryBeer"/> </h3>
         <div class="row">
             <div class="col-sm-6">
                 <div class="panel panel-default">
@@ -35,7 +35,7 @@
                                <tr>
                                    <td>
                                        <form:label path="goodsReceiptDate">
-                                           <spring:message text="goodsReceiptDate"/>
+                                           <spring:message code="alcohol.goodsReceiptDate"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -45,7 +45,7 @@
                                <tr>
                                    <td>
                                        <form:label path="category">
-                                           <spring:message text="category"/>
+                                           <spring:message code="alcohol.category"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -55,7 +55,7 @@
                                <tr>
                                    <td>
                                        <form:label path="productName">
-                                           <spring:message text="productName"/>
+                                           <spring:message code="alcohol.productName"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -65,7 +65,7 @@
                                <tr>
                                    <td>
                                        <form:label path="liter">
-                                           <spring:message text="liter"/>
+                                           <spring:message code="alcohol.liter"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -75,7 +75,7 @@
                                <tr>
                                    <td>
                                        <form:label path="balanceOnTheFirstDayOfTheMonth">
-                                           <spring:message text="balanceOnTheFirstDayOfTheMonth"/>
+                                           <spring:message code="alcohol.balanceOnTheFirstDayOfTheMonth"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -85,7 +85,7 @@
                                <tr>
                                    <td>
                                        <form:label path="receivedForMonth">
-                                           <spring:message text="receivedForMonth"/>
+                                           <spring:message code="alcohol.receivedForMonth"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -95,7 +95,7 @@
                                <tr>
                                    <td>
                                        <form:label path="soldForMonth">
-                                           <spring:message text="soldForMonth"/>
+                                           <spring:message code="alcohol.soldForMonth"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -105,7 +105,7 @@
                                <tr>
                                    <td>
                                        <form:label path="balanceOnTheLastDayOfTheMonth">
-                                           <spring:message text="balanceOnTheLastDayOfTheMonth"/>
+                                           <spring:message code="alcohol.balanceOnTheLastDayOfTheMonth"/>
                                        </form:label>
                                    </td>
                                    <td>
@@ -117,11 +117,11 @@
                                    <td colspan="2">
                                        <c:if test="${!empty alcohol.id}">
                                            <input class="btn btn-primary" type="submit"
-                                                  value="<spring:message text="Update Beer"/>"/>
+                                                  value="<spring:message code="alcohol.editBeer"/>"/>
                                        </c:if>
                                        <c:if test="${empty alcohol.id}">
                                            <input class="btn btn-primary" type="submit"
-                                                  value="<spring:message text="Add Beer"/>"/>
+                                                  value="<spring:message code="alcohol.addBeer"/>"/>
                                        </c:if>
                                    </td>
                                </tr>
@@ -136,11 +136,11 @@
                     <div class="panel-body">
                         <form method="post" action="alcoholCategoryBeer/filter">
                             <dl>
-                                <dt>startDate:</dt>
+                                <dt><spring:message code="alcohol.startDate"/></dt>
                                 <dd><input type="date" name="startDate" value="${param.startDate}"></dd>
                             </dl>
                             <dl>
-                                <dt>endDate:</dt>
+                                <dt><spring:message code="alcohol.endDate"/></dt>
                                 <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
                             </dl>
                             <div class="text-right">
@@ -163,7 +163,7 @@
                     <div class="panel-body">
                         <form method="post" action="alcoholCategoryBeer/searchByProductName" onclick="return (volidateSearchByProductName(this));" >
                             <dl>
-                                <dt>Search By Product Name</dt>
+                                <dt><spring:message code="alcohol.filter"/></dt>
                                 <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"/> </dd>
                                 <dd>
                                     <button class="btn btn-primary" type="submit">
@@ -187,14 +187,14 @@
         <div class="panel panel-default">
             <table class="table table-bordered">
                 <thead>
-                    <th>Goods Receipt Date</th>
-                    <th>Category</th>
-                    <th>Product Name</th>
-                    <th>Liter</th>
-                    <th>Balance On The First Day Of The Month</th>
-                    <th>Received For Month</th>
-                    <th>Sold For Month</th>
-                    <th>Balance On The Last Day Of The Month</th>
+                    <th><spring:message code="alcohol.goodsReceiptDate"/></th>
+                    <th><spring:message code="alcohol.category"/></th>
+                    <th><spring:message code="alcohol.productName"/></th>
+                    <th><spring:message code="alcohol.liter"/></th>
+                    <th><spring:message code="alcohol.balanceOnTheFirstDayOfTheMonth"/></th>
+                    <th><spring:message code="alcohol.receivedForMonth"/></th>
+                    <th><spring:message code="alcohol.soldForMonth"/></th>
+                    <th><spring:message code="alcohol.balanceOnTheLastDayOfTheMonth"/></th>
                     <th></th>
                     <th></th>
                 </thead>
@@ -209,8 +209,8 @@
                         <td><c:out value="${alcohol.receivedForMonth}"/></td>
                         <td><c:out value="${alcohol.soldForMonth}"/></td>
                         <td><c:out value="${alcohol.balanceOnTheLastDayOfTheMonth}"/></td>
-                        <td><A href="alcoholCategoryBeer/update?id=${alcohol.id}"/>update</td>
-                        <td><A href="alcoholCategoryBeer/delete?id=${alcohol.id}"/>delete</td>
+                        <td><A href="alcoholCategoryBeer/update?id=${alcohol.id}"/><spring:message code="alcohol.update"/></td>
+                        <td><A href="alcoholCategoryBeer/delete?id=${alcohol.id}"/><spring:message code="alcohol.delete"/></td>
                     </tr>
                 </c:forEach>
             </table>
