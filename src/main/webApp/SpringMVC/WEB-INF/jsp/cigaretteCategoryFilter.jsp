@@ -12,7 +12,7 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 <div class="jumbotron">
     <div class="container">
-        <h3 class="text-center">Cigarette Category Filter</h3>
+        <h3 class="text-center"><spring:message code="cigarette.cigaretteCategoryFilter"/> </h3>
         <div class="row">
             <div class="col-sm-6">
                 <div class="panel panel-default">
@@ -37,7 +37,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="goodsReceiptDate">
-                                            <spring:message text="goodsReceiptDate"/>
+                                            <spring:message code="cigarette.goodsReceiptDate"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -47,7 +47,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="category">
-                                            <spring:message text="category"/>
+                                            <spring:message code="cigarette.category"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -57,7 +57,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="productName">
-                                            <spring:message text="productName"/>
+                                            <spring:message code="cigarette.productName"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -67,7 +67,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="amount">
-                                            <spring:message text="amount"/>
+                                            <spring:message code="cigarette.amount"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -77,7 +77,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="balanceOnTheFirstDayOfTheMonth">
-                                            <spring:message text="balanceOnTheFirstDayOfTheMonth"/>
+                                            <spring:message code="cigarette.balanceOnTheFirstDayOfTheMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -87,7 +87,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="receivedForMonth">
-                                            <spring:message text="receivedForMonth"/>
+                                            <spring:message code="cigarette.receivedForMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -97,7 +97,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="soldForMonth">
-                                            <spring:message text="soldForMonth"/>
+                                            <spring:message code="cigarette.soldForMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -107,7 +107,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="balanceOnTheLastDayOfTheMonth">
-                                            <spring:message text="balanceOnTheLastDayOfTheMonth"/>
+                                            <spring:message code="cigarette.balanceOnTheLastDayOfTheMonth"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -119,11 +119,11 @@
                                     <td colspan="2">
                                         <c:if test="${!empty cigarette.id}">
                                             <input class="btn btn-primary" type="submit"
-                                                   value="<spring:message text="Update Cigarette Filte"/>"/>
+                                                   value="<spring:message code="cigarette.editFilter"/>"/>
                                         </c:if>
                                         <c:if test="${empty cigarette.id}">
                                             <input class="btn btn-primary" type="submit"
-                                                   value="<spring:message text="Add Cigarette Filte"/>"/>
+                                                   value="<spring:message code="cigarette.addFilter"/>"/>
                                         </c:if>
                                     </td>
                                 </tr>
@@ -138,11 +138,11 @@
                     <div class="panel-body">
                         <form method="post" action="cigaretteCategoryFilter/filter">
                             <dl>
-                                <dt>startDate:</dt>
+                                <dt><spring:message code="cigarette.startDate"/></dt>
                                 <dd><input type="date" name="startDate" value="${param.startDate}"></dd>
                             </dl>
                             <dl>
-                                <dt>endDate:</dt>
+                                <dt><spring:message code="cigarette.endDate"/></dt>
                                 <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
                             </dl>
                             <div class="text-right">
@@ -165,7 +165,7 @@
                     <div class="panel-body">
                         <form method="post" action="cigaretteCategoryFilter/searchByProductName" onclick="return (volidateSearchByProductName(this));" >
                             <dl>
-                                <dt>Search By Product Name</dt>
+                                <dt><spring:message code="cigarette.filter"/></dt>
                                 <dd><input type="text" name="searchByProductName" value="${param.searchByProductName}"></dd>
                                 <dd>
                                     <button class="btn btn-primary" type="submit">
@@ -189,14 +189,14 @@
         <div class="panel panel-default">
             <table class="table table-bordered">
                 <thead>
-                    <th>Goods Receipt Date</th>
-                    <th>Category</th>
-                    <th>Product Name</th>
-                    <th>Amount</th>
-                    <th>Balance On The First Day Of The Month</th>
-                    <th>Received For Month</th>
-                    <th>Sold For Month</th>
-                    <th>Balance On The Last Day Of The Month</th>
+                    <th><spring:message code="cigarette.goodsReceiptDate"/></th>
+                    <th><spring:message code="cigarette.category"/></th>
+                    <th><spring:message code="cigarette.productName"/></th>
+                    <th><spring:message code="cigarette.amount"/></th>
+                    <th><spring:message code="cigarette.balanceOnTheFirstDayOfTheMonth"/></th>
+                    <th><spring:message code="cigarette.receivedForMonth"/></th>
+                    <th><spring:message code="cigarette.soldForMonth"/></th>
+                    <th><spring:message code="cigarette.balanceOnTheLastDayOfTheMonth"/></th>
                     <th></th>
                     <th></th>
                 </thead>
@@ -211,8 +211,8 @@
                         <td><c:out value="${cigarette.receivedForMonth}"/></td>
                         <td><c:out value="${cigarette.soldForMonth}"/></td>
                         <td><c:out value="${cigarette.balanceOnTheLastDayOfTheMonth}"/></td>
-                        <td><a href="cigaretteCategoryFilter/update?id=${cigarette.id}"/>update</td>
-                        <td><a href="cigaretteCategoryFilter/delete?id=${cigarette.id}"/>delete</td>
+                        <td><a href="cigaretteCategoryFilter/update?id=${cigarette.id}"/><spring:message code="cigarette.update"/></td>
+                        <td><a href="cigaretteCategoryFilter/delete?id=${cigarette.id}"/><spring:message code="cigarette.delete"/></td>
                     </tr>
                 </c:forEach>
             </table>
