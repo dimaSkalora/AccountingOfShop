@@ -11,32 +11,32 @@
         <div class="row">
             <div class="col-md-7 col-md-offset-2">
                 <div class="text-center">
-                    <h2>Accounting Of Shop</h2>
+                    <h2><spring:message code="app.title"/></h2>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="text-center">
-                            <h3>Список товаров:</h3>
+                            <h3><spring:message code="goods.listofGoods"/></h3>
                         </div>
                         <div class="container">
                             <ul class="list-unstyled">
-                                <li><h4><ins>Alcohol</ins></h4>
+                                <li><h4><ins><spring:message code="goods.alcohol"/></ins></h4>
                                     <ul>
-                                        <li><a  href="alcoholCategoryWine">Alcohool Category Wine</a></li>
-                                        <li><a  href="alcoholCategoryVodka">Alcohool Category Vodka</a></li>
-                                        <li><a  href="alcoholCategoryBeer">Alcohool Category Beer</a></li>
+                                        <li><a  href="alcoholCategoryWine"><spring:message code="goods.alcoholCategoryWine"/></a></li>
+                                        <li><a  href="alcoholCategoryVodka"><spring:message code="goods.alcoholCategoryVodka"/></a></li>
+                                        <li><a  href="alcoholCategoryBeer"><spring:message code="goods.alcoholCategoryBeer"/></a></li>
                                     </ul>
                                 </li>
-                                <li><h4><ins>Cigarette</ins></h4>
+                                <li><h4><ins><spring:message code="goods.cigarette"/></ins></h4>
                                     <ul>
-                                        <li><a  href="cigaretteCategoryFilter">Cigarette Category Filter</a></li>
-                                        <li><a  href="cigaretteCategoryWithoutFilter">Cigarette Category Without Filter</a></li>
+                                        <li><a  href="cigaretteCategoryFilter"><spring:message code="goods.cigaretteCategoryFilter"/></a></li>
+                                        <li><a  href="cigaretteCategoryWithoutFilter"><spring:message code="goods.cigaretteCategoryWithoutFilter"/></a></li>
                                     </ul>
                                 </li>
-                                <li><h4><ins>Product</ins></h4>
+                                <li><h4><ins><spring:message code="goods.product"/></ins></h4>
                                     <ul>
-                                        <li><a  href="productCategoryMilk">Product Category Milk</a></li>
-                                        <li><a  href="productCategoryMeat">Product Category Meat</a></li>
+                                        <li><a  href="productCategoryMilk"><spring:message code="goods.productCategoryMilk"/></a></li>
+                                        <li><a  href="productCategoryMeat"><spring:message code="goods.productCategoryMeat"/></a></li>
                                     </ul>
                                 </li>
                             </ul>

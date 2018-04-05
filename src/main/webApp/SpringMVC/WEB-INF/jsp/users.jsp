@@ -10,7 +10,7 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 <div class="jumbotron">
     <div class="container">
-        <h3 class="text-center">Users</h3>
+        <h3 class="text-center"><spring:message code="user.title"/></h3>
         <div class="row">
             <div class="col-sm-8">
                 <div class="panel panel-default">
@@ -31,7 +31,7 @@
                                     </td>
                                     <td>
                                         <form:label path="name">
-                                            <spring:message text="Name"/>
+                                            <spring:message code="user.name"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>
                                         <form:label path="email">
-                                            <spring:message text="Email"/>
+                                            <spring:message code="user.email"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -49,7 +49,7 @@
                                     </td>
                                     <td>
                                         <form:label path="password">
-                                            <spring:message text="Password"/>
+                                            <spring:message code="user.password"/>
                                         </form:label>
                                     </td>
                                     <td>
@@ -59,15 +59,11 @@
                                 <tr>
                                     <td/>
                                     <td/>
-                                    <td colspan="2" class="text-right">
-                                        <c:if test="${!empty user.name}">
-                                            <input class="btn btn-primary" type="submit"
-                                                   value="<spring:message text="Update User"/>"/>
-                                        </c:if>
-                                        <c:if test="${empty user.name}">
-                                            <input class="btn btn-primary" type="submit"
-                                                   value="<spring:message text="Add User"/>"/>
-                                        </c:if>
+                                    <td/>
+                                    <td colspan="2">
+                                          <input class="btn btn-primary" type="submit"
+                                                   value="<spring:message code="user.add"/>"/>
+
                                     </td>
                                 </tr>
                             </table>
@@ -80,11 +76,11 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>name</th>
-                    <th>email</th>
-                    <th>roles</th>
-                    <th>active</th>
-                    <th>registered</th>
+                    <th><spring:message code="user.name"/></th>
+                    <th><spring:message code="user.email"/></th>
+                    <th><spring:message code="user.roles"/></th>
+                    <th><spring:message code="user.active"/></th>
+                    <th><spring:message code="user.registered"/></th>
                     <th/>
                     <th/>
                 </tr>
