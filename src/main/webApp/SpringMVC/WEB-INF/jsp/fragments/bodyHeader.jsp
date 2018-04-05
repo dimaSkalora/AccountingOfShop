@@ -4,29 +4,30 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
+        <a href="goods" class="navbar-brand"><spring:message code="app.title"/></a>
         <div class="collapse navbar-collapse">
             <sec:authorize access="isAuthenticated()">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Алкоголь<b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><spring:message code="app.Alcohol"/><b class="caret"></b></a>
                         <ul id="menu1" class="dropdown-menu">
-                            <li><a href="alcoholCategoryVodka">Водка</a></li>
-                            <li><a href="alcoholCategoryWine">Вино</a></li>
-                            <li><a href="alcoholCategoryBeer">Пиво</a></li>
+                            <li><a href="alcoholCategoryVodka"><spring:message code="app.AlcoholVodka"/></a></li>
+                            <li><a href="alcoholCategoryWine"><spring:message code="app.AlcoholWine"/></a></li>
+                            <li><a href="alcoholCategoryBeer"><spring:message code="app.AlcoholBeer"/> </a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Сигареты<b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><spring:message code="app.Cigarette"/><b class="caret"></b></a>
                         <ul id="menu2" class="dropdown-menu">
-                            <li><a href="cigaretteCategoryFilter">С фильтром</a></li>
-                            <li><a href="cigaretteCategoryWithoutFilter">Без фильтра</a></li>
+                            <li><a href="cigaretteCategoryFilter"><spring:message code="app.CigaretteFilter"/></a></li>
+                            <li><a href="cigaretteCategoryWithoutFilter"><spring:message code="app.CigaretteWithoutFilter"/></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Продукты<b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><spring:message code="app.Product"/><b class="caret"></b></a>
                         <ul id="menu3" class="dropdown-menu">
-                            <li><a href="productCategoryMilk">Молочные</a></li>
-                            <li><a href="productCategoryMeat">Мясные</a></li>
+                            <li><a href="productCategoryMilk"><spring:message code="app.ProductMilk"/></a></li>
+                            <li><a href="productCategoryMeat"><spring:message code="app.ProductMeat"/></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -63,11 +64,11 @@
                     <sec:authorize access="isAuthenticated()">
                         <form:form class="navbar-form" action="logout" method="post">
                             <sec:authorize access="hasRole('ROLE_ADMIN')">
-                                <a class="btn btn-info" href="users">users</a>
+                                <a class="btn btn-info" href="users"><spring:message code="app.users"/></a>
                             </sec:authorize>
-                            <%--   <a class="btn btn-info" href="profile"><sec:authentication property="principal.userTo.name"/> <spring:message code="app.profile"/></a>--%>
+                            <%--   <a class="btn btn-info" href="profile"><sec:authentication property="principal.user.name"/> <spring:message code="app.profile"/></a>--%>
 
-                            <a class="btn btn-info" href="profile">profile</a>
+                            <a class="btn btn-info" href="profile"><spring:message code="app.profile"/></a>
                             <button class="btn btn-primary" type="submit">
                                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
                             </button>
@@ -86,6 +87,14 @@
                             </button>
                         </form:form>
                     </sec:authorize>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">${pageContext.response.locale}<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${requestScope['javax.servlet.forward.request_uri']}?lang=en">English</a></li>
+                        <li><a href="${requestScope['javax.servlet.forward.request_uri']}?lang=ru">Русский</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
