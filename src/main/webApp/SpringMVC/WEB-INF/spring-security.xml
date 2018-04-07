@@ -13,10 +13,10 @@
         <intercept-url pattern="/**" access="isAuthenticated()"/>
         <csrf disabled="true"/>
     </http>
-<!--
-    <beans:bean class="org.springframework.security.crypto.factory.PasswordEncoderFactories" id="passwordEncoder" factory-method="createDelegatingPasswordEncoder"/>
+    <!--
+        <beans:bean class="org.springframework.security.crypto.factory.PasswordEncoderFactories" id="passwordEncoder" factory-method="createDelegatingPasswordEncoder"/>
 
-    -->
+        -->
     <beans:bean name="noopEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
 
     <http>
@@ -34,22 +34,22 @@
         <!--<csrf disabled="true"/>-->
     </http>
 
-<!--    <authentication-manager>
-        <authentication-provider>
-            <password-encoder ref="noopEncoder"/>
-            <jdbc-user-service data-source-ref="dataSource"
-                               users-by-username-query="SELECT email, password, enabled FROM users WHERE email = ?"
-                               authorities-by-username-query="
-                                                                       SELECT u.email, r.role FROM users u, user_roles r WHERE u.id = r.user_id AND u.email = ?"
-            />
-            &lt;!&ndash;      <user-service>
-                      <user name="user@yandex.ru" password="password" authorities="ROLE_USER"/>
-                      <user name="admin@gmail.com" password="admin" authorities="ROLE_ADMIN"/>
-                  </user-service>&ndash;&gt;
-        </authentication-provider>
-    </authentication-manager>-->
+    <!--    <authentication-manager>
+            <authentication-provider>
+                <password-encoder ref="noopEncoder"/>
+                <jdbc-user-service data-source-ref="dataSource"
+                                   users-by-username-query="SELECT email, password, enabled FROM users WHERE email = ?"
+                                   authorities-by-username-query="
+                                                                           SELECT u.email, r.role FROM users u, user_roles r WHERE u.id = r.user_id AND u.email = ?"
+                />
+                &lt;!&ndash;      <user-service>
+                          <user name="user@yandex.ru" password="password" authorities="ROLE_USER"/>
+                          <user name="admin@gmail.com" password="admin" authorities="ROLE_ADMIN"/>
+                      </user-service>&ndash;&gt;
+            </authentication-provider>
+        </authentication-manager>-->
 
-  <!--  <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />-->
+    <!--  <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />-->
 
     <authentication-manager >
         <authentication-provider user-service-ref="userServiceLogin">
