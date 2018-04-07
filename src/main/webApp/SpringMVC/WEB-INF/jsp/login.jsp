@@ -23,21 +23,17 @@
         <br/>
         <p>
 
-            <a class="btn btn-lg btn-success" href="register">Add User&raquo;</a>
+            <a class="btn btn-lg btn-success" href="register"><spring:message code="app.addUser"/></a>
             <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('new@dbdd', 'passwordNew')">
-                 User
+                 <spring:message code="app.enter"/> User
             </button>
             <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('admin@gmail.com', '{noop}admin')">
-                 Admin
-            </button>
-            <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('new2@\'k\'okop,', 'passwordNew')">
-                 Admin
+                <spring:message code="app.enter"/> Admin
             </button>
         </p>
         <br/>
         <p>Стек технологий: <a href="http://projects.spring.io/spring-security/">Spring Security</a>,
             <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html">Spring MVC</a>,
-            <a href="http://projects.spring.io/spring-data-jpa/">Spring Data JPA</a>,
             <a href="http://spring.io/blog/2014/05/07/preview-spring-security-test-method-security">Spring Security
                 Test</a>,
             <a href="http://hibernate.org/orm/">Hibernate ORM</a>,
@@ -48,12 +44,8 @@
             <a href="http://en.wikipedia.org/wiki/JavaServer_Pages_Standard_Tag_Library">JSTL</a>,
             <a href="http://tomcat.apache.org/">Apache Tomcat</a>,
             <a href="http://www.webjars.org/">WebJars</a>,
-            <a href="http://datatables.net/">DataTables plugin</a>,
-            <a href="http://ehcache.org">EHCACHE</a>,
             <a href="http://www.postgresql.org/">PostgreSQL</a>,
-            <a href="http://junit.org/">JUnit</a>,
             <a href="http://hamcrest.org/JavaHamcrest/">Hamcrest</a>,
-            <a href="http://jquery.com/">jQuery</a>,
             <a href="http://ned.im/noty/">jQuery notification</a>,
             <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
     </div>
@@ -61,13 +53,15 @@
 
 <div class="container">
     <div class="lead">
-        &nbsp;&nbsp;&nbsp;<a href="https://github.com/dimaSkalora/OnlineShelterPet">Java Enterprise проект</a> с
+        &nbsp;&nbsp;&nbsp;<a href="https://github.com/dimaSkalora/AccountingOfShop">Java Enterprise проект</a> с
         регистрацией/авторизацией и интерфейсом на основе ролей (USER, ADMIN).
         Администратор может создавать/редактировать/удалять пользователей, а пользователи - управлять своим
-        профилем и данными через UI (по AJAX) и по REST интерфейсу с базовой авторизацией.
-        Возможна фильтрация данных по датам и времени, при этом цвет записи таблицы домашнего животного зависит от того, принижает ли
-        вес
-        норму (редактируемый параметр в профиле пользователя).
+        профилем и данными через UI и по REST интерфейсу с базовой авторизацией. Возможна фильтрация данных по дате.
+      <p>
+          Accounting Of Shop - Веб програма предзначена для конроля за движением товара по торговой точки. Учёт прихода товара
+          по накладным, продажи товара по касовым чекам(при отсуствии касового апарата - по записам книги продаж), выведение
+          остатоков товара на конец месяця.
+      </p>
     </div>
 </div>
 
