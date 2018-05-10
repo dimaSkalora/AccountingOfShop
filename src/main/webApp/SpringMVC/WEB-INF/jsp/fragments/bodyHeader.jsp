@@ -30,8 +30,8 @@
                             <li><a href="productCategoryMeat"><spring:message code="app.ProductMeat"/></a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">REST<b class="caret"></b></a>
+                  <%--  <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">JSON<b class="caret"></b></a>
                         <ul id="menu4" class="dropdown-menu">
                             <li><a href="/accountingOfShop/rest/admin/users" target="_blank">/rest/admin/users</a></li>
                             <li><a href="/accountingOfShop/rest/admin/users/100001" target="_blank">/rest/admin/users/100001</a></li>
@@ -56,7 +56,7 @@
                             <li><a href="/accountingOfShop/rest/profile/products/category/мясные" target="_blank">/rest/profile/products/category/мясные</a></li>
                             <li><a href="/accountingOfShop" target="_blank"></a></li>
                         </ul>
-                    </li>
+                    </li>--%>
                 </ul>
             </sec:authorize>
             <ul class="nav navbar-nav navbar-right">
