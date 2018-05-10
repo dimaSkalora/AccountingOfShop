@@ -10,4 +10,15 @@ Accounting of Shop - Java Enterprise Online Project
    остатоков товара на конец месяця.
 </p>
 
-![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/login_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/add_user_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/add_user_en.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/goods_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/goods_en.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/goods_alcohol_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/admin_profile_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/users_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/users_en.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/add_alcohol_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/cigarettes_ru.PNG)
+![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/edit_cigarette_ru.PNG)
