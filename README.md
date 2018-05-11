@@ -22,7 +22,6 @@ Accounting of Shop - Java Enterprise Online Project
 ![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/add_alcohol_ru.PNG)
 ![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/cigarettes_ru.PNG)
 ![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/edit_cigarette_ru.PNG)
-__________REST__________
 ![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/getAllUsers.jpg)
 ![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/getUserAdmin.jpg)
 ![Image alt](https://github.com/dimaSkalora/AccountingOfShop/blob/master/image/createUser.jpg)
