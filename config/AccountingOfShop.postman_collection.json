@@ -1,0 +1,570 @@
+{
+	"id": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+	"name": "AccountingOfShop",
+	"description": "Accounting Of Shop(REST)",
+	"order": [],
+	"folders": [
+		{
+			"name": "alcohol",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"order": [
+				"116401b7-84d7-a7a4-254f-df21aab62132",
+				"a5ff30ca-d8db-dd69-907f-c87cdac86ec5",
+				"c330f55c-5cae-a7d4-fae4-faeb10281333",
+				"303731f1-bd2f-4cee-da60-55a2acf908bb",
+				"03a4643e-a647-3e4c-14a8-41a0ea0cb0eb",
+				"d1fa9a3e-4fe9-9714-86f0-2f37987db1df",
+				"159b61cc-2ad2-9bd0-213b-77a8d4e28cec"
+			],
+			"owner": 0,
+			"folder": "820fc459-8751-a381-b120-5693636d9409",
+			"folders_order": [],
+			"id": "11b7f58a-d065-e207-6533-ebc908e574c3"
+		},
+		{
+			"name": "goods",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"order": [],
+			"owner": 0,
+			"folders_order": [
+				"11b7f58a-d065-e207-6533-ebc908e574c3"
+			],
+			"id": "820fc459-8751-a381-b120-5693636d9409"
+		},
+		{
+			"name": "users",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"order": [
+				"e4fd943b-c5a0-de19-3578-12a6027a16bf",
+				"7193a264-4a22-0dc6-6acc-ca9e1405e21c",
+				"0b59dcbe-db24-286d-37a3-d720ed0e49d7",
+				"472ebae7-1e3e-a36b-6173-9e5caf614bb3",
+				"eaa97b2e-f84a-df67-4db9-2736def0b79c",
+				"dcfd95a1-7cd2-4858-fd1c-26667de64f1c"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "9d188d11-84dd-126a-a001-021b25c7f862"
+		}
+	],
+	"folders_order": [
+		"9d188d11-84dd-126a-a001-021b25c7f862",
+		"820fc459-8751-a381-b120-5693636d9409"
+	],
+	"timestamp": 1525442093583,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "03a4643e-a647-3e4c-14a8-41a0ea0cb0eb",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/profile/alcohols",
+			"folder": "11b7f58a-d065-e207-6533-ebc908e574c3",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1526023239865,
+			"name": "createAlcohol",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": [],
+			"rawModeData": "  {\n        \"goodsReceiptDate\": \"2018-05-11\",\n        \"category\": \"пиво\",\n        \"productName\": \"new bear\",\n        \"liter\": 1,\n        \"balanceOnTheFirstDayOfTheMonth\": 5,\n        \"receivedForMonth\": 5,\n        \"soldForMonth\": 8,\n        \"balanceOnTheLastDayOfTheMonth\": 2\n    }"
+		},
+		{
+			"id": "0b59dcbe-db24-286d-37a3-d720ed0e49d7",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/admin/users/100001",
+			"folder": "9d188d11-84dd-126a-a001-021b25c7f862",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1525970935615,
+			"name": "getUserAdmin/100001",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		},
+		{
+			"id": "116401b7-84d7-a7a4-254f-df21aab62132",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/profile/alcohols",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"data": null,
+			"dataMode": "params",
+			"name": "getAllAlcohol",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1526021497410,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"folder": "11b7f58a-d065-e207-6533-ebc908e574c3"
+		},
+		{
+			"id": "159b61cc-2ad2-9bd0-213b-77a8d4e28cec",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/profile/alcohols/100043",
+			"folder": "11b7f58a-d065-e207-6533-ebc908e574c3",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1526023624353,
+			"name": "updateAlcohol/",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": [],
+			"rawModeData": "{\n    \"id\": 100043,\n    \"goodsReceiptDate\": \"2018-05-11\",\n    \"category\": \"пиво\",\n    \"productName\": \"updateAlcohol\",\n    \"liter\": 1,\n    \"balanceOnTheFirstDayOfTheMonth\": 5,\n    \"receivedForMonth\": 5,\n    \"soldForMonth\": 8,\n    \"balanceOnTheLastDayOfTheMonth\": 2\n}"
+		},
+		{
+			"id": "303731f1-bd2f-4cee-da60-55a2acf908bb",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/profile/alcohols/filter?startDate=2018-05-11&endDate=2018-05-11",
+			"folder": "11b7f58a-d065-e207-6533-ebc908e574c3",
+			"queryParams": [
+				{
+					"key": "startDate",
+					"value": "2018-05-11",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "endDate",
+					"value": "2018-05-11",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1526024607951,
+			"name": "getAlcoholFilter/startDate_endDate",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		},
+		{
+			"id": "472ebae7-1e3e-a36b-6173-9e5caf614bb3",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/admin/users/100020",
+			"folder": "9d188d11-84dd-126a-a001-021b25c7f862",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1525971111763,
+			"name": "updateUser/100020",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": [],
+			"rawModeData": "{\n    \"id\": 100020,\n    \"name\": \"updateUser\",\n    \"email\": \"ry@gfed\",\n    \"password\": \"1111\",\n    \"registered\": \"2018-05-10\",\n    \"roles\": [\"ROLE_USER\"],\n    \"enabled\": true\n}"
+		},
+		{
+			"id": "7193a264-4a22-0dc6-6acc-ca9e1405e21c",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/admin/users/by?email=user@yandex.ru",
+			"folder": "9d188d11-84dd-126a-a001-021b25c7f862",
+			"queryParams": [
+				{
+					"key": "email",
+					"value": "user@yandex.ru",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1525973296977,
+			"name": "getUserBy/user@yandex.ru",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		},
+		{
+			"id": "a5ff30ca-d8db-dd69-907f-c87cdac86ec5",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/profile/alcohols/100034",
+			"folder": "11b7f58a-d065-e207-6533-ebc908e574c3",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1526022072452,
+			"name": "getAlcohol/100034",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		},
+		{
+			"id": "c330f55c-5cae-a7d4-fae4-faeb10281333",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/profile/alcohols/category/вино",
+			"folder": "11b7f58a-d065-e207-6533-ebc908e574c3",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1526024354480,
+			"name": "getAlcoholCategory/вино",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		},
+		{
+			"id": "d1fa9a3e-4fe9-9714-86f0-2f37987db1df",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/profile/alcohols/100041",
+			"folder": "11b7f58a-d065-e207-6533-ebc908e574c3",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1526023361068,
+			"name": "deleteAlcohol/100041",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		},
+		{
+			"id": "dcfd95a1-7cd2-4858-fd1c-26667de64f1c",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/admin/users",
+			"folder": "9d188d11-84dd-126a-a001-021b25c7f862",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1525970574045,
+			"name": "createUser",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Name10\",\n    \"email\": \"email@email.com\",\n    \"password\": \"{noop}admin\",\n    \"registered\": \"2018-05-10\",\n    \"enabled\": true\n}"
+		},
+		{
+			"id": "e4fd943b-c5a0-de19-3578-12a6027a16bf",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/admin/users",
+			"folder": "9d188d11-84dd-126a-a001-021b25c7f862",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1525951408604,
+			"name": "getAllUsers",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		},
+		{
+			"id": "eaa97b2e-f84a-df67-4db9-2736def0b79c",
+			"headers": "Authorization: Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW5AZ21haWwuY29tOntub29wfWFkbWlu",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/accountingOfShop/rest/admin/users/100032",
+			"folder": "9d188d11-84dd-126a-a001-021b25c7f862",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin@gmail.com",
+				"password": "{noop}admin",
+				"saveToRequest": true
+			},
+			"time": 1525971525223,
+			"name": "deleteUser/100032",
+			"description": "",
+			"collectionId": "fa050ea3-afc9-0910-5876-74c2ddf1f368",
+			"responses": []
+		}
+	]
+}
