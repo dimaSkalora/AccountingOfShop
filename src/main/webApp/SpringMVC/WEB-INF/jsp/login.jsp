@@ -24,7 +24,7 @@
         <p>
 
             <a class="btn btn-lg btn-success" href="register"><spring:message code="app.addUser"/></a>
-            <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('new@dbdd', 'passwordNew')">
+            <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('user@yandex.ru', '{noop}password')">
                  <spring:message code="app.enter"/> User
             </button>
             <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('admin@gmail.com', '{noop}admin')">
