@@ -1,8 +1,12 @@
 package com.shop.of.accounting.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 public abstract class AbstractNamedEntity extends AbstractBaseEntity{
 
+    @Column(name = "name", nullable = false)
     protected String name;
 
     public AbstractNamedEntity() {
