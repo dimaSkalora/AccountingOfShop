@@ -1,17 +1,37 @@
 package com.shop.of.accounting.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "alcohol", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id"}, name = "alcohols_unique_user_datetime_idx")})
 public class Alcohol extends AbstractBaseEntity{
+    @Column(name = "goodsReceiptDate", nullable = false)
     private LocalDate goodsReceiptDate;
+
+    @Column(name = "category", nullable = false)
     private String category;
+
+    @Column(name = "productName", nullable = false)
     private String productName;
+
+    @Column(name = "liter", nullable = false)
     private Double liter;
+
+    @Column(name = "balanceOnTheFirstDayOfTheMonth", nullable = false)
     private Integer balanceOnTheFirstDayOfTheMonth;
+
+    @Column(name = "receivedForMonth", nullable = false)
     private Integer receivedForMonth;
+
+    @Column(name = "soldForMonth", nullable = false)
     private Integer soldForMonth;
+
+    @Column(name = "balanceOnTheLastDayOfTheMonth", nullable = false)
     private Integer balanceOnTheLastDayOfTheMonth;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public Alcohol() {
