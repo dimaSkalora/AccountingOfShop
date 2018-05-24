@@ -13,16 +13,16 @@
        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
 
-  <!--  <jdbc:initialize-database data-source="dataSource" enabled="${database.init}">
-        <jdbc:script location="classpath:db/${jdbc.initLocation}"/>
-        <jdbc:script encoding="utf-8" location="classpath:db/populateDB.sql"/>
-    </jdbc:initialize-database>-->
-
     <!--<tx:annotation-driven/>-->
 
     <!-- Editor-Inspection-Inactive profile highlighting-(Error) Скрывает неактивный профиль-->
+<!--
+    <jdbc:initialize-database data-source="dataSource" enabled="${database.init}">
+        <jdbc:script location="classpath:db/${jdbc.initLocation}"/>
+        <jdbc:script encoding="utf-8" location="classpath:db/populateDB.sql"/>
+    </jdbc:initialize-database>
 
-<!--    <beans profile="hsqldb">
+    <beans profile="hsqldb">
         <context:property-placeholder location="classpath:db/hsqldb.properties" system-properties-mode="OVERRIDE"/>
 
         &lt;!&ndash;no pooling&ndash;&gt;
@@ -90,15 +90,6 @@
               p:testWhileIdle="true"/>
     </beans>-->
 
-<!--            <bean id="dataSource"
-              class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-              p:driverClassName="org.postgresql.Driver"
-              p:url="jdbc:postgresql://localhost:5432/accounting_of_shop"
-              p:username="user"
-              p:password="password"/>-->
-
-    <context:property-placeholder location="classpath:/db/heroku.properties" system-properties-mode="OVERRIDE"/>
-
     <bean class="java.net.URI" id="dbUrl">
         <constructor-arg value="${DATABASE_URL}"/>
     </bean>
@@ -118,6 +109,13 @@
           p:removeAbandoned="true"
           p:testOnConnect="true"
           p:testWhileIdle="true"/>
+
+           <!-- <bean id="dataSource"
+              class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+              p:driverClassName="org.postgresql.Driver"
+              p:url="jdbc:postgresql://localhost:5432/accounting_of_shop"
+              p:username="user"
+              p:password="password"/>-->
 
     <context:component-scan base-package="com.shop.of.accounting.**.repository.jdbc"/>
 
