@@ -1,0 +1,1 @@
+web:    java $JAVA_OPTS  -DACCOUNTING_OF_SHOP="." -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
