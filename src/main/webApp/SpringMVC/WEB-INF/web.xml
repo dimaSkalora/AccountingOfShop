@@ -7,17 +7,17 @@
     <display-name>AccountingOfShop</display-name>
 
     <!-- Spring MVC -->
-    <context-param>
+  <!--  <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>WEB-INF/spring_mvc-servlet.xml</param-value>
-    </context-param>
+    </context-param>-->
     <servlet>
         <servlet-name>spring_mvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-   <!--     <init-param>
+        <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/SpringMVC/WEB-INF/spring_mvc-servlet.xml</param-value>
-        </init-param>-->
+            <param-value>/WEB-INF/spring_mvc-servlet.xml</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
