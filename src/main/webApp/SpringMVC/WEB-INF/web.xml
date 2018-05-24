@@ -23,13 +23,15 @@
 
    <!-- <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/SpringMVC/WEB-INF/spring_mvc-servlet.xml</param-value>
-    </context-param>
+        <param-value>SpringMVC/WEB-INF/spring_mvc-servlet.xml</param-value>
+    </context-param>-->
 
+<!--
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/spring_mvc-servlet.xml</param-value>
-    </context-param>-->
+    </context-param>
+-->
 
 
 
