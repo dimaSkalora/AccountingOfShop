@@ -74,17 +74,17 @@
                 </configuration>
             </plugin>
 
-       <!--     <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
                     <webXml>src/main/webApp/SpringMVC/WEB-INF/web.xml</webXml>
                 </configuration>
-            </plugin>-->
+            </plugin>
 
             <!--  http://stackoverflow.com/questions/4305935/is-it-possible-to-supply-tomcat6s-context-xml-file-via-the-maven-cargo-plugin#4417945 -->
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
                 <version>1.6.5</version>
@@ -93,7 +93,7 @@
                         <containerId>tomcat8x</containerId>
                         <systemProperties>
                             <file.encoding>UTF-8</file.encoding>
-                            <!--<spring.profiles.active>tomcat,datajpa</spring.profiles.active>-->
+                            &lt;!&ndash;<spring.profiles.active>tomcat,datajpa</spring.profiles.active>&ndash;&gt;
                         </systemProperties>
                         <dependencies>
                             <dependency>
@@ -122,7 +122,7 @@
                         </deployable>
                     </deployables>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
