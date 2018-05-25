@@ -91,8 +91,8 @@
     </beans>-->
 
     <bean class="java.net.URI" id="dbUrl">
-        <constructor-arg value="postgres://dcmuyoswrhmkcf:ec8dcadc3b3ebc994017bc91a3b2864ae723d312a48049f073ca0dffe3e6a30e@ec2-79-125-6-160.eu-west-1.compute.amazonaws.com:5432/devrn0gn31qru"/>
-       <!-- <constructor-arg value="${DATABASE_URL}"/>-->
+<!--        <constructor-arg value="postgres://dcmuyoswrhmkcf:ec8dcadc3b3ebc994017bc91a3b2864ae723d312a48049f073ca0dffe3e6a30e@ec2-79-125-6-160.eu-west-1.compute.amazonaws.com:5432/devrn0gn31qru"/>-->
+        <constructor-arg value="${DATABASE_URL}"/>
     </bean>
     <bean id="dataSource"
           class="org.apache.tomcat.jdbc.pool.DataSource"
