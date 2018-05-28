@@ -90,8 +90,8 @@
               p:testWhileIdle="true"/>
     </beans>-->
 
-<!--    <bean class="java.net.URI" id="dbUrl">
-&lt;!&ndash;        <constructor-arg value="postgres://dcmuyoswrhmkcf:ec8dcadc3b3ebc994017bc91a3b2864ae723d312a48049f073ca0dffe3e6a30e@ec2-79-125-6-160.eu-west-1.compute.amazonaws.com:5432/devrn0gn31qru"/>&ndash;&gt;
+    <bean class="java.net.URI" id="dbUrl">
+<!--        <constructor-arg value="postgres://dcmuyoswrhmkcf:ec8dcadc3b3ebc994017bc91a3b2864ae723d312a48049f073ca0dffe3e6a30e@ec2-79-125-6-160.eu-west-1.compute.amazonaws.com:5432/devrn0gn31qru"/>-->
         <constructor-arg value="${DATABASE_URL}"/>
     </bean>
     <bean id="dataSource"
@@ -109,14 +109,14 @@
           p:testOnBorrow="true"
           p:removeAbandoned="true"
           p:testOnConnect="true"
-          p:testWhileIdle="true"/>-->
+          p:testWhileIdle="true"/>
 
-            <bean id="dataSource"
+         <!--   <bean id="dataSource"
               class="org.springframework.jdbc.datasource.DriverManagerDataSource"
               p:driverClassName="org.postgresql.Driver"
               p:url="jdbc:postgresql://localhost:5432/accounting_of_shop"
               p:username="user"
-              p:password="password"/>
+              p:password="password"/>-->
 
     <context:component-scan base-package="com.shop.of.accounting.**.repository.jdbc"/>
 
