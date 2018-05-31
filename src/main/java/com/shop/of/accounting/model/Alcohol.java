@@ -3,9 +3,27 @@ package com.shop.of.accounting.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@NamedQueries({
+        @NamedQuery(name = Alcohol.ALL_SORTED, query = "SELECT a FROM Alcohol a WHERE a.user.id=:userId ORDER BY a.goodsReceiptDate DESC "),
+        @NamedQuery(name = Alcohol.DELETE, query = "SELECT FROM Alcohol a WHERE a.id=:id AND a.user.id=:userId "),
+        @NamedQuery(name = Alcohol.GET_CATEGORY, query = "SELECT FROM Alcohol a WHERE a.category=:category AND a.user.id=:userId ORDER BY a.goodsReceiptDate"),
+        @NamedQuery(name = Alcohol.GET_SEARCH_BY_PRODUCT_NAME, query = "SELECT FROM Alcohol a WHERE a.productname=:productName " +
+                "AND a.category=:category AND a.user.id=:userId ORDER BY a.goodsReceiptDate DESC"),
+        @NamedQuery(name = Alcohol.GET_BETWEEN, query = "SELECT FROM Alcohol a WHERE a.user.id=:userId AND a.goodsReceiptDate " +
+                "BETWEEN :startDate AND :endDate ORDER BY a.goodsReceiptDate DESC")
+})
+
 @Entity
 @Table(name = "alcohol", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id"}, name = "alcohols_unique_user_datetime_idx")})
 public class Alcohol extends AbstractBaseEntity{
+
+    public static final String ALL_SORTED = "Alcohol.getAll";
+    public static final String DELETE = "Alcohol.delete";
+    public static final String GET_CATEGORY = "Alcohol.getCategory";
+    public static final String GET_SEARCH_BY_PRODUCT_NAME = "Alcohol.getSearchByProductName(";
+    public static final String GET_BETWEEN = "Alcohol.getBetween";
+
+
     @Column(name = "goodsReceiptDate", nullable = false)
     private LocalDate goodsReceiptDate;
 
