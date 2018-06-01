@@ -5,11 +5,11 @@ import java.time.LocalDate;
 
 @NamedQueries({
         @NamedQuery(name = Alcohol.ALL_SORTED, query = "SELECT a FROM Alcohol a WHERE a.user.id=:userId ORDER BY a.goodsReceiptDate DESC "),
-        @NamedQuery(name = Alcohol.DELETE, query = "SELECT FROM Alcohol a WHERE a.id=:id AND a.user.id=:userId "),
-        @NamedQuery(name = Alcohol.GET_CATEGORY, query = "SELECT FROM Alcohol a WHERE a.category=:category AND a.user.id=:userId ORDER BY a.goodsReceiptDate"),
-        @NamedQuery(name = Alcohol.GET_SEARCH_BY_PRODUCT_NAME, query = "SELECT FROM Alcohol a WHERE a.productname=:productName " +
+        @NamedQuery(name = Alcohol.DELETE, query = "DELETE FROM Alcohol a WHERE a.id=:id AND a.user.id=:userId "),
+        @NamedQuery(name = Alcohol.GET_CATEGORY, query = "SELECT a FROM Alcohol a WHERE a.category=:category AND a.user.id=:userId ORDER BY a.goodsReceiptDate"),
+        @NamedQuery(name = Alcohol.GET_SEARCH_BY_PRODUCT_NAME, query = "SELECT a FROM Alcohol a WHERE a.productname=:productName " +
                 "AND a.category=:category AND a.user.id=:userId ORDER BY a.goodsReceiptDate DESC"),
-        @NamedQuery(name = Alcohol.GET_BETWEEN, query = "SELECT FROM Alcohol a WHERE a.user.id=:userId AND a.goodsReceiptDate " +
+        @NamedQuery(name = Alcohol.GET_BETWEEN, query = "SELECT a FROM Alcohol a WHERE a.user.id=:userId AND a.goodsReceiptDate " +
                 "BETWEEN :startDate AND :endDate ORDER BY a.goodsReceiptDate DESC")
 })
 
